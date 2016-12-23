@@ -1,0 +1,12 @@
+---
+applications:
+- name: scriptremote
+
+command: node server.js
+
+memory: 512M
+
+env:
+  NODE_ENV: cloudfoundry
+  NPM_CONFIG_PRODUCTION: true
+  NODE_MODULES_CACHE: false

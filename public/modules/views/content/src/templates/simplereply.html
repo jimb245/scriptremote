@@ -1,0 +1,24 @@
+<!-- 
+This is the default Angular template for displaying returnable message data, 
+which is contained in the 'replyContent' scope variable. 'replyContent' is an 
+array of name-value string pairs with the values rendered as text inputs. The 
+form submit control that sends the reply is defined in the parent element of 
+this template.
+
+The template can be customized for specific data by handling the array elements
+individually to choose other input controls and by styling using inline 
+CSS and classes from the bootstrap library.
+
+It is best to avoid using script tags or url's unless you know what you are 
+doing since they could cause code conflicts or security vulnerabilities.
+-->
+
+<ul class="list-group">
+    <li ng-repeat="item in replyContent" class="list-group-item">
+        <div class="form-group">
+        <label for="id1">{{item.name}}:</label>
+        <input type="text" ng-model="item.value" class="form-control" id="id1">
+        <div>
+    </li>
+</ul>
+

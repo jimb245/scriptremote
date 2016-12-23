@@ -1,0 +1,9 @@
+export SRUSER=5859a42970cbf6e875cbb6af
+export SRTOKEN=56977015fd44a10cffaa2ef5
+export SREMAIL=user1@foo1zxwlmpqrtdip.com
+export SRSHAREUSER=5859a42970cbf6e875cbb6b8
+export SRSHARETOKEN=c6a5ef0882ee54f3960d9309
+export SRSHAREEMAIL=user2@foo1zxwlmpqrtdip.com
+export SRTESTMODE=1
+export BATSDIR=public/scripts/bash/test
+export SRSERVER=localhost:3000

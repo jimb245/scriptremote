@@ -1,0 +1,5 @@
+The CSA is a collaboration of scientists, software developers and educators who 
+collectively develop, manage and utilise internet-based citizen science projects 
+in order to further science itself, and the public understanding of both science 
+and of the scientific process. These projects use the time, abilities and 
+energies of a distributed community of citizen scientists who are our collaborators.

@@ -1,0 +1,11 @@
+<!-- Template for info, config, delete glyphs on breadcrumbs bar -->
+
+<span ng-if="bcglyphs.useinfo" class="spacer-white">|</span>
+<span ng-if="bcglyphs.useinfo" class="glyph" ng-click="showHideInfo()"><span class="glyphicon glyphicon-info-sign white"</span></span>
+
+<span ng-if="bcglyphs.useconfig" class="spacer-white">|</span>
+<span ng-if="bcglyphs.useconfig" class="glyph" ng-click="bcfct.configure()"><span class="glyphicon glyphicon-cog white"</span></span>
+
+<span ng-if="bcglyphs.usedelete" class="spacer-white">|</span>
+<span ng-if="bcglyphs.usedelete" class="glyph" ng-click="bcfct.delete($event)"><span class="glyphicon glyphicon-remove white"</span></span>
+

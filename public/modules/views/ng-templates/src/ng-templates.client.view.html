@@ -1,0 +1,73 @@
+<!-- This view is for listing/adding/removing dynamic Angular templates  -->
+
+<div ng-controller="TemplatesAddCtrl">
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Available templates</span>
+    </div>
+    <ul class="list-group">
+        <li ng-repeat="item in templates" class="list-group-item h5">
+            {{item.name}}
+            <span class="spacer">|</span>
+            <span ng-if="!visible[$index]" class="glyph" ng-click="show($index)"><span class="glyphicon glyphicon-plus"></span></span>
+            <span ng-if="visible[$index]" class="glyph" ng-click="hide($index)"><span class="glyphicon glyphicon-minus"></span></span>
+            <span class="spacer">|</span>
+            <span class="glyph" ng-click="delete($index)"><span class="glyphicon glyphicon-remove"</span></span>
+            <span class="spacer">|</span>
+            <pre ng-if="visible[$index]">{{item.content}}</pre>
+        </li>
+    </ul>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Default templates</span>
+    </div>
+    <div class="panel-body h5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 col-sm-1">
+                Content:
+            </div>
+            <div class="col-xs-8 col-sm-2">
+                <select ng-model="defaultTemplates[0]"
+                ng-options="item.name for item in templates">
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-1">
+                Reply:
+            </div>
+            <div class="col-xs-8 col-sm-2">
+                <select ng-model="defaultTemplates[1]"
+                ng-options="item.name for item in templates">
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-1"></div>
+            <div class="col-xs-8 col-sm-2">
+                <button ng-click="save()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Upload new template</span>
+    </div>
+    <div class="panel-body h5">
+        <input type="file" file-model="file"/>
+        </br>
+        <label for="file">Template name:</label>
+        <input type="text" id="file" ng-model="key">
+        </br>
+        </br>
+        <button ng-click="upload()">Upload</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+
+<div class="container-fluid">
+
+<form class="form-signin" action="/processreset" method="post">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <input type="hidden" name="email" value="{{email}}">
+
+    <div class="form-group col-sm-10 col-sm-offset-1" >
+
+        <h3>
+        Resetting password for user: {{email}}
+        <a class="glyph pull-right" href="/"><span class="glyphicon glyphicon-remove"</span></span></a>
+        </h3>
+
+        <label for="inputPassword" class="sr-only">New password</label>
+        <input name="password" type="text" id="inputPassword" class="form-control" placeholder="New password" required autofocus>
+        </br>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+    </div>
+</form>
+
+</div> <!-- /container -->

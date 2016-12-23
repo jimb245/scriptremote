@@ -1,0 +1,82 @@
+<!-- This view is for managing project settings -->
+
+<div>
+
+<ol class="my-breadcrumb hidden-md hidden-lg">
+    <li ng-if="projectDecrypt"><a href="/#jobs/{{projectDisplayURI}}/{{projectResourceURI}}"><span class="glyphicon glyphicon-arrow-left"</span></a></li>
+    <li ng-if="!projectDecrypt"><a href="/#jobs/{{projectDisplayURI}}"><span class="glyphicon glyphicon-arrow-left"</span></a></li>
+    <li><span class="white">...</span></li>
+    <li class="active">settings</li>
+</ol>
+<ol class="my-breadcrumb visible-md visible-lg">
+    <li><a href="/#projects">Projects</a></li>
+    <li ng-if="projectDecrypt"><a href="/#jobs/{{projectDisplayURI}}/{{projectResourceURI}}">{{projectDisplay}}</a></li>
+    <li ng-if="!projectDecrypt"><a href="/#jobs/{{projectDisplayURI}}">{{projectDisplay}}</a></li>
+    <li class="active">settings</li>
+</ol>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span class="panel-title">Project "{{projectDisplay}}" Description</span>
+    </div>
+    <div class="panel-body">
+        <input type="text" ng-model="description" placeholder="Description">
+        <p>
+        <button ng-click="submitDescription()">Save</button>
+        </p>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span class="panel-title">Project "{{projectDisplay}}" Authorized Users</span>
+    </div>
+    <div class="panel-body">
+        <ul>
+            <li ng-repeat="user in authUsers" class="list-group-item">
+                {{user.email}}
+                <span class="spacer">|</span>
+                {{user.access}}
+                <span class="spacer">|</span>
+                <span class="glyph" ng-click="deleteShare($index)"><span class="glyphicon glyphicon-remove"</span></span>
+            </li>
+        </ul>
+        <p>
+        <label for="email">Email:</label>
+        <input type="text" id="email" ng-model="email">
+        <br><br>
+        <label>Permission:</label>
+            <input type="radio" ng-model="access" value="read">
+            Read
+            <input type="radio" ng-model="access" value="reply">
+            Reply
+            <input type="radio" ng-model="access" value="write">
+            Write
+        </p>
+        <p>
+        <button ng-click="submitShare()">Share</button>
+        </p>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span class="panel-title">Project "{{projectDisplay}}" Notification</span>
+    </div>
+    <div class="panel-body">
+        <label for="nickname">Project Nickname:</label>
+        <input type="text" id="nickname" ng-model="nickname">
+        <br><br>
+        <label>Notify:</label>
+            <input type="radio" ng-model="notify" value="on">
+            On
+            <input type="radio" ng-model="notify" value="off">
+            Off
+        </p>
+        <p>
+        <button ng-click="submitNotify()">Save</button>
+        </p>
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,165 @@
+<div align="right" style="display:block">
+<a href="/">Home</a>
+</div>
+
+
+<h3 id="-overview-"><strong>Overview</strong></h3>
+<p>ScriptRemote is a MEAN-stack project to provide secure remote access to scripted applications from a browser UI. Basically it is a messaging service between scripts running on machines in protected networks and browsers.  The goal is to it make it easy to bring up web UI&#39;s for applications for which developing full-custom web or mobile apps is not practical.</p>
+<h3 id="-features-"><strong>Features</strong></h3>
+<ul>
+<li>Configurable browser UI based on AngularJS templates</li>
+<li>Native script-based utilities (bash, python2.7) for script-to-server communication</li>
+<li>API for adding script or other client interfaces </li>
+<li>Hierarchical message organization</li>
+<li>Message attached files (text, png, svg)</li>
+<li>Message sharing with permissions</li>
+<li>Firewall friendly - uses only http/https and mail protocols</li>
+<li>End-to-end script-browser message encryption</li>
+<li>Notifications</li>
+</ul>
+<h3 id="-example-"><strong>Example</strong></h3>
+<p>In this simulated IOT example, a script sends a message containing some temperatures obtained from sensors and the current state of a fan switch. It then waits for a reply message, which can leave the fan state unchanged or flip it. The message cycle repeats indefinitely.</p>
+<p>The screenshot on the left shows one of the messages viewed under the default UI settings. On the right the settings are changed to use a customized template that better matches the message content.</p>
+<div style="text-align:center">
+<img src="/doc/image/Screenshot_1.png" width="35%" border="5" solid hspace="10"/>
+<img src="/doc/image/Screenshot_2.png" width="35%" border="5" solid hspace="10"/>
+</div>
+
+
+<p><strong>Here is the bash script:</strong></p>
+<pre><code>#!/bin/bash
+
+# Load utilities SR_start, SR_set, SR_send
+. ./srio.sh
+
+function read_temp {
+    # simulate temperature sensor
+    echo $((50 + RANDOM % 50))
+}
+
+fan_state=off
+function fan_control {
+    # simulate fan control
+    fan_state=&quot;$1&quot;
+}
+
+SR_start ${SRUSER} ${SRTOKEN} &#39;MyProject&#39; &#39;FanControlJob&#39;
+
+while true
+do
+    # read some temps
+    sensor1=$(read_temp &#39;sensor1&#39;)
+    sensor2=$(read_temp &#39;sensor2&#39;)
+    sensor3=$(read_temp &#39;sensor3&#39;)
+
+    # prepare temps to send
+    SR_set &#39;Sensor1&#39; &quot;$sensor1&quot; &#39;false&#39;
+    SR_set &#39;Sensor2&#39; &quot;$sensor2&quot; &#39;false&#39;
+    SR_set &#39;Sensor3&#39; &quot;$sensor3&quot; &#39;false&#39;
+
+    # prepare fan state to send, reply allowed
+    SR_set &#39;Fan&#39; &quot;$fan_state&quot; &#39;true&#39;
+
+    # send message, wait for reply
+    SR_send &#39;CheckTemps&#39; 
+
+    if [ &quot;$SR_status&quot; == &#39;REPLY_TIMEOUT&#39; ]
+    then
+        # timed out
+        SR_clear
+        continue
+    elif [ &quot;$SR_status&quot; == &#39;OK&#39; ]
+    then
+        # get fan reply
+        SR_get &#39;Fan&#39;
+        if [ &quot;$SR_output&quot; != &quot;$fan_state&quot; ]
+        then
+            # change fan state
+            fan_control &quot;$SR_output&quot;
+        fi
+    else
+        # got an error
+        echo &quot;$SR_status&quot;
+        break
+    fi
+done
+
+SR_end
+</code></pre><p><strong>These are the customized Angular templates:</strong></p>
+<p>The &#39;ng&#39; attributes provide the links to the <a href="https://angularjs.org"><strong>Angular</strong></a> framework. A few HTML5 and <a href="http://getbootstrap.com"><strong>bootstrap</strong></a> library features are used for styling. The second template is for the reply part of the message. The reply button is handled by the template&#39;s parent element so it does not appear here.</p>
+<pre><code>&lt;ul class=&quot;list-group&quot;&gt;
+    &lt;li ng-repeat=&quot;item in content&quot; class=&quot;list-group-item&quot;&gt;
+        Temperature at {{item.name}}: &lt;meter min=&quot;0&quot; max=&quot;120&quot; low=&quot;0.01&quot; high=&quot;90&quot; optimum=&quot;78&quot; value=&quot;{{item.value}}&quot;&gt;&lt;/meter&gt;&lt;span class=&quot;label label-default&quot;&gt;{{item.value}}F&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-sm-1&quot;&gt;
+        Fan state: 
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-1&quot;&gt;
+        &lt;input type=&quot;radio&quot; ng-model=&quot;replyContent[0].value&quot; value=&quot;off&quot;&gt;Off
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-1&quot;&gt;
+        &lt;input type=&quot;radio&quot; ng-model=&quot;replyContent[0].value&quot; value=&quot;on&quot;&gt;On
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="-additional-documentation-"><strong>Additional Documentation</strong></h3>
+<ul>
+<li>The <a href="/doc/guide.html"><strong>Guide</strong></a> describes ScriptRemote features in more detail</li>
+<li>The <strong>API Reference</strong> (<a href="https://scriptremote.com/doc/api/index.html">https://scriptremote.com/doc/api/index.html</a>) defines the server data endpoints available to clients</li>
+</ul>
+<h3 id="-demo-server-"><strong>Demo Server</strong></h3>
+<p>If you would like to try a few tests with ScriptRemote 
+before installing there is a server at <a href="https://scriptremote.com">https://scriptremote.com</a>. 
+To use the site:</p>
+<ol>
+<li><p>Register</p>
+</li>
+<li><p>Login and get API credentials by selecting <strong>Settings</strong> in the menu bar and then clicking <strong>Generate</strong> in the API Credentials section</p>
+</li>
+<li><p>Copy the API credentials to the test system</p>
+</li>
+<li><p>Download a utility script (bash in this example) to the test system:</p>
+<pre><code class="lang-shell"> &gt;$ wget https://scriptremote.com/dist/srio.sh
+</code></pre>
+<p> The test system also needs to have <code>curl</code> installed.</p>
+</li>
+<li><p>Start with a simple test case:</p>
+<pre><code class="lang-shell"> &gt;$ cat &gt; test.sh
+ #!/bin/bash
+ . ./srio.sh
+ SR_start ${SRUSER} ${SRTOKEN} &#39;myproject&#39; &#39;myjob&#39;
+ SR_set &#39;myhello&#39; &#39;Hello World, how are you?&#39; &#39;false&#39;
+ SR_send &#39;mysend&#39;
+ SR_set &#39;myreply&#39; &#39;I am ...&#39; &#39;true&#39;
+ SR_send &#39;mysend&#39;
+ SR_get &#39;myreply&#39;
+ SR_end
+</code></pre>
+</li>
+<li><p>Export the API credentials and run the test:</p>
+<pre><code class="lang-shell"> &gt;$ export SRUSER=&lt;youruserid&gt;
+ &gt;$ export SRTOKEN=&lt;yourtoken&gt;
+ &gt;$ bash test.sh
+</code></pre>
+</li>
+<li><p>The messages should now be accessible under <strong>Projects</strong> in the menu bar. Submitting a modified reply to the second message should cause the script to display the new value. If the test system is behind a proxy server you may need to set the HTTPS_PROXY environment variable.</p>
+</li>
+</ol>
+<h3 id="-installation-"><strong>Installation</strong></h3>
+<p>Installation methods vary depending on the platform chosen and level of availability needed for the service. Only simple installation options can be covered here.</p>
+<p><p>
+A basic platform choice is between public and private servers.</p>
+<p><strong>Public server</strong>  - Has a public IP and domain name, is probably hosted by a cloud provider, implements standard security protections. Browser access is similar to that for any public website. Script connections to the server will traverse firewalls and/or proxies on the client side, and possibly load balancers/reverse proxies on the server side. Those systems only need to allow script-to-server https requests because long-polling is used for server-to-script data transfer. Support for https/tls is necessary in order to secure browser and script connections.</p>
+<p><strong>Private server</strong> - Is located in a protected network, probably the same one containing the scripted application. Browser access is through a VPN or SSH tunnel client running on the remote device. Script connections might traverse internal firewalls. Use of TLS on the server may not be required if connections through the public net are otherwise protected and there is sufficient confidence in the security of the private network.</p>
+<p>For a small site not needing high availability, the server can just be a machine or VPS that can support a MEAN-stack environment and forward email. Another option is a platform-as-a-service vendor that supports MEAN-stack.</p>
+<p><a href="/doc/InstallDigitalOcean.html"><strong>Installation on Digital Ocean Droplet</strong></a></p>
+<p><a href="/doc/InstallBluemix.html"><strong>Installation on IBM Bluemix</strong></a></p>
+<p><a href="/doc/InstallGeneric.html"><strong>Generic private server installation</strong></a></p>
+<p><a href="/doc/InstallDevelop.html"><strong>Installation for development</strong></a></p>
+<h3 id="-author-"><strong>Author</strong></h3>
+<p>Jim Brandt</p>
+<h3 id="-license-"><strong>License</strong></h3>
+<p>MIT</p>

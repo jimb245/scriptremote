@@ -1,0 +1,23 @@
+
+<div class="container-fluid">
+
+<p>
+{{#if disabled}}
+<h4>Sorry - login is currently disabled for this account.</h4>
+{{/if}}
+
+{{#if incomplete}}
+<h4>The email address is confirmed. The site requires the administrator to enable 
+new users. An email will be sent when registration is complete.</h4>
+{{/if}}
+
+{{#if complete}}
+<h4>Registration completed.</h4>
+{{/if}}
+</p>
+
+<p>
+<h4>Click <a href="/"><b>here</b></a> to continue.</h4>
+</p>
+
+</div>

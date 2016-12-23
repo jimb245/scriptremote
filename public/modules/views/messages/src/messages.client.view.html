@@ -1,0 +1,25 @@
+<!-- This view displays the list of messages of a selected location -->
+
+<div> 
+<ol class="my-breadcrumb hidden-md hidden-lg">
+    <li><a href="/#locations/{{projectDisplayURI}}/{{jobId}}/{{projectResourceURI}}"><span class="glyphicon glyphicon-arrow-left"</span></a></li>
+    <li><span class="white">...</span></li>
+    <li class="active">{{locationDisplay}}</li>
+    <span breadcrumb-glyphs  bcglyphs="{useinfo: true, useconfig: true, usedelete: false}" bcinfo="bcinfo" bcfct="bcfct"></span>
+</ol>
+<ol class="my-breadcrumb visible-md visible-lg">
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/#jobs/{{projectDisplayURI}}/{{projectResourceURI}}">{{projectDisplay}}</a></li>
+    <li><a href="/#locations/{{projectDisplayURI}}/{{jobId}}/{{projectResourceURI}}">{{jobId}}</a></li>
+    <li class="active">{{locationDisplay}}</li>
+    <span breadcrumb-glyphs  bcglyphs="{useinfo: true, useconfig: true, usedelete: false}" bcinfo="bcinfo" bcfct="bcfct"></span>
+</ol>
+<breadcrumb-info bcinfo="bcinfo"></breadcrumb-info>
+
+<ul class="list-group">
+  <li ng-repeat="msg in msgs" class="list-group-item">
+  <span class="target col-xm-2 col-sm-1" ng-click="select(msg.id)"><span class="bg-info">{{msg.id}}</span></span><span class="col-xm-offset-2 col-sm-offset-1">{{msg.timestamp}}</span>
+  </li>
+</ul>
+
+</div>

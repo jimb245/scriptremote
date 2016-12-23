@@ -1,0 +1,299 @@
+
+<div align="right" style="display:none">
+<a href="/">Home</a>
+</div>
+
+<h2>
+ScriptRemote Guide
+</h2>
+
+<ul>
+<li><a href="#messages">Messages</a></li>
+<li><a href="#scriptutilities">Script Utilities</a></li>
+<li><a href="#usersandauth">Users and Authentication</a></li>
+<li><a href="#projectsharing">Project Sharing</a></li>
+<li><a href="#templates">Templates</a></li>
+<li><a href="#encryption">Encryption</a></li>
+<li><a href="#notifications">Notifications</a></li>
+<li><a href="#emails">Security Emails</a></li>
+</ul>
+
+<hr>
+
+<br>
+<br>
+<div id="messages">
+<b>Messages</b>
+<p>
+ScriptRemote provides some basic organizational structure for messages
+in order to help support sharing and navigation. The levels of the
+this organizational hierarchy are:
+<p>
+<ul>
+<li>project</li>
+<li>job</li>
+<li>location</li>
+<li>message</li>
+</ul>
+<p>
+A project might correspond to a simple script of your own or to a
+more complex, shared workspace. A project contains jobs, has a unique
+name and owner, and is the unit of sharing between users.
+<p>
+A job represents a single execution of a script. The script will declare
+the project it belongs to in its first request to the server and the project
+will be created if it does not already exist. The job 
+naming scheme allows the script to declare a meaningful, but not necessarily 
+unique, name and leaves it to the server to assign a job identfier that 
+is unique within the project.  This means that repeated runs of the same script 
+will not cause a problem.
+<p>
+A location is just a tag that can be used to group messages within
+a job. A common use would be identify where in a script the message
+originated. Every job has a least one user-defined location
+and an 'end' location.
+<p>
+A message contains data in the form of a sequence of name-value pairs,
+where the names and values are strings, plus optional attached files.
+The supported file types are text, svg image, and png image.
+The server assigns message identifiers that are unique within a
+location.
+<p>
+Messaging is incorporated into script control flow as follows.
+A script can send messages to the server at any time. It can only
+receive a message as a reply to a previously sent message and it
+must wait for the reply after sending the message. A maximum
+wait time can be specified. Script execution continues when the
+reply is received or the maximum wait is exceeded. The received
+message has the same name-value pairs except that the values
+may have been changed by the sender.
+<p>
+Messages remain on the server until deleted, which is normally done
+by deleting the parent job or project in the browser.
+Messages will also be deleted by the server automatically if
+the maximum message count for a location is reached. The
+maximum is set by the script when starting a job.
+<p>
+In the browser the message hierarchy is under the 'Projects' 
+main menu section. You navigate down the hierarchy by clicking
+on links in the lists, and navigate up by clicking on links
+in the 'breadcrumbs' menu bar which shows the current
+position in the hierarchy. You can also use the browser's back arrow.
+</div>
+
+<hr>
+<br>
+<br>
+<div id="scriptutilities">
+<b>Script Utilities</b>
+<p>
+The script utilities are the interface to the server's API
+endpoints. They provide high-level calls to start a job, send
+and receive messages, and end the job.
+Currently there are versions for bash and python2.7.
+They require some standard packages like opennssl and pycrypto
+that are normally available on linux systems, or can readily be 
+installed.
+<p>
+The detailed documentation for the utilities is contained in
+the corresponding file, which can be downloaded via:
+<pre>
+    wget https://scriptremote.com/dist/srio.sh 
+    wget https://scriptremote.com/dist/srio.py 
+</pre>
+The utilities need to know the server's domain and the protocol,
+https or http depending on whether the server is public or private.
+These can be configured by setting an environment variable.
+</div>
+
+<hr>
+<br>
+<br>
+<div id="usersandauth">
+<b>Users and Authentication</b>
+<p>
+Using ScriptRemote requires registration and authentication with
+the server.  Registration is done via the browser interface
+by providing a valid email and a password, at a minimum.  The first user 
+to register after installation is automatically the server admin. The 
+admin controls the registration method for other users, if any. The
+possible methods are: for other users to register themselves, for them
+to register with admin approval, or to be registered manually by
+the admin. The admin user can also disable or delete users and
+send admin emails.
+<p>
+After registration, the two types of clients that can connect to the 
+server use different authentication methods.  Browser clients use 
+login/session-cookie authentication. Script clients use the HTTP 
+Basic Auth header to send a user id and a token with every request. 
+The user id and token values are obtained from the server via the 
+browser, and must be provided to the script when it starts, for 
+example through setting environment variables. 
+<p>
+While the user id is fixed, a new token can be generated anytime
+and becomes the 'current' token.  When a job starts its token must
+match the current value. However the server stores the token with 
+a job and thereafter all requests from the script related to 
+the job can continue to use the same value, even if new tokens 
+are generated in the meantime.
+<p>
+In the browser token generation is located in the 'Settings' main
+menu section.  Email and password login credentials can also be updated
+there.
+</div>
+
+<hr>
+<br>
+<br>
+<div id="projectsharing">
+<b>Project Sharing</b>
+<p>
+If there are multiple users of a server then their messages
+are kept separate in the database and by default no sharing
+is allowed.
+<p>
+If desired, messages can be shared on a per-project basis. 
+Sharing is controlled by the project's owner, the user
+who created it. To share with another user, the owner
+edits the project's Authorized Users settings in the browser and
+specifies the email of the user together with a permission level.
+The permission levels are 'read', 'reply', and 'write'.
+Project settings are accessed through the 'gear' icon when
+the project is viewed in the browser.
+<p>
+To access the shared data the other user edits her sharing
+settings under the 'Settings' main menu section and specifies 
+the owner's email and project name. This adds the shared 
+project to the list of
+known projects for the user. The shared project is identified
+by the combination of name and owner email, so there is no 
+conflict if the same project name is already present in
+the list.
+<p>
+For read permission the sharing user will just be able to
+view the project messages in the browser. With reply permission
+the user can also send replies to any messages that are
+waiting for a response. With write permission the user can do anything
+with the project except change the sharing or delete it, including adding 
+and deleting jobs.
+</div>
+
+<hr>
+<br>
+<br>
+<div id="templates">
+<b>Templates</b>
+<p>
+Templates provide a way to dynamically modify the browser UI for 
+messages in order to customize the presentation of specific kinds
+of data. 
+<p>
+There are two types of template, one for the non-reply
+part of a message  and one for the reply part, 
+if any. All the messages in a job with a given location 
+will use the same pair of templates.
+<p>
+ScriptRemote installs with default templates that will be used
+for all locations. The default templates simply display the name-value
+pairs of the message and the attachments in sequence with minimal
+styling. 
+<p>
+Users can create new templates and upload them to the server.
+The 'Templates' menu section in the browser is for managing templates,
+including uploading, viewing, and deleting templates and changing
+the global defaults. The templates for a location are controlled
+by the location's settings, which are accessed through the 'gear'
+icon when the location is viewed in the browser.
+<p>
+Templates are coded in HTML plus <a href="https://angularjs.org">AngularJS 1</a> 
+extensions. CSS and bootstrap can be used for custom styling.
+</div>
+
+<hr>
+<br>
+<br>
+<div id="encryption">
+<b>Encryption</b>
+<p>
+End-to-end encryption between script and browser is an option
+that can be used on a per-project basis. A project will be encrypted
+if an encryption passphrase is specified by the script when the
+project is created. The passphrase is used to generate the symetric 
+encryption key. 
+It is never sent over the wire, either by the the script 
+utilities or the browser.
+<p>
+The passphrase of a project is fixed at the time it is created.
+If a later job attempts to use a different passphrase with the same 
+project name it will actually create a new project in the server 
+with the same plaintext name but a different encrypted name.
+<p>
+All user-defined
+data is encrypted before transmission to the server, including 
+project name, job and location names, and message content.
+The reply part of a message, if any, is also cryptographically
+signed.
+Likewise any reply message received from the server must have been encrypted
+and signed using the same passphrase or the script utility will
+flag an error.
+<p>
+To decrypt a project in the browser the user needs to
+supply the correct passphrase, under the 'Settings' menu section.
+If the passphrase is not set in the browser, or has the wrong value, the user
+will just see encrypted, random-looking values when
+viewing the project.
+<p>
+It is also possible to encrypt templates when uploading them to
+the server, by setting a passphrase before starting the upload.
+The same passphrase then has to be in effect when viewing the
+template code or using it with a project. Consequently if both
+project and templates are encrypted their passphrases must be
+the same.
+<p>
+Encryption protects templates that contain sensitive data, and
+can also help to prevent script injection attacks.
+<p>
+If templates are encrypted and no passphrase is set when viewing
+a project then the browser will attempt to revert to the 
+ScriptRemote global default templates.
+</li>
+
+<hr>
+<br>
+<br>
+<div id="notifications">
+<b>Notifications</b>
+<p>
+Notifications is an option to have the server send SMS texts
+when new messages arrive from projects owned by or being shared by the user.
+<p>
+To use it you need to have set an SMS gateway email address, either during registration
+or later in the 'Settings' menu section. The text messages are actually generated by
+sending emails to the gateway. Most of the major carriers provide such a gateway.
+<p>
+Notifications are per-project and are enabled in the project settings. A project nickname
+can also be specified there. The nickname will be included in the message header, which is
+particularly useful for encrypted projects where the server does not have access to the
+plaintext project name. 
+<p>
+A notification contains a shortened link to the new ScriptRemote message. If the user
+is not currently logged in in their browser, the link will redirect to the login page
+instead of the message.
+
+</div>
+
+<hr>
+<br>
+<br>
+<div id="emails">
+<b>Security Emails</b>
+<p>
+Emails will be sent to the current registered user address when any of these events occurs:
+<ul>
+<li>Email address is changed</li>
+<li>Password is changed</li>
+<li>New API token is generated</li>
+<li>New template is uploaded</li>
+</ul>
+
+</div>

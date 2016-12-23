@@ -1,0 +1,25 @@
+<!-- This view displays clickable list of locations of a selected job -->
+
+<div>
+
+<ol class="my-breadcrumb hidden-md hidden-lg">
+    <li><a href="/#jobs/{{projectDisplayURI}}/{{projectResourceURI}}"><span class="glyphicon glyphicon-arrow-left"</span></a></li>
+    <li><span class="white">...</span></li>
+    <li class="active">{{jobId}}</li>
+    <span breadcrumb-glyphs  bcglyphs="{useinfo: true, useconfig: true, usedelete: true}" bcinfo="bcinfo" bcfct="bcfct"></span>
+</ol>
+<ol class="my-breadcrumb visible-md visible-lg">
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/#jobs/{{projectDisplayURI}}/{{projectResourceURI}}">{{projectDisplay}}</a></li>
+    <li class="active">{{jobId}}</li>
+    <span breadcrumb-glyphs  bcglyphs="{useinfo: true, useconfig: true, usedelete: true}" bcinfo="bcinfo" bcfct="bcfct"></span>
+</ol>
+<breadcrumb-info bcinfo="bcinfo"></breadcrumb-info>
+
+<ul class="list-group">
+  <li ng-repeat="location in locations" class="list-group-item">
+    <span class="target bg-info" ng-click="select(location.name)">{{location.name}}</span>
+  </li>
+</ul>
+
+</div>

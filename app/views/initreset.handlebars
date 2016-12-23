@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+    <form class="form-signin" action="/processinitreset" method="post">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+        <div class="form-group col-sm-10 col-sm-offset-1">
+
+            <h3 class="form-signin-heading">
+            {{#if retry}}
+                <span style="color: red">{{msg}}</span>
+            {{else}}
+                Request a password reset:
+            {{/if}}
+            <a class="glyph pull-right" href="/"><span class="glyphicon glyphicon-remove"</span></span></a>
+            </h3>
+            <p>
+            Enter your user email address. 
+            A confirmation email will be sent to that address with a
+                link for resetting the password.
+            </p>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            </br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </div>
+    </form>
+</div> <!-- /container -->

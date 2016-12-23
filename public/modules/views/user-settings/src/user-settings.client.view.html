@@ -1,0 +1,118 @@
+<!-- This view is for managing user settings -->
+
+<div ng-controller="UserSettingsCtrl"
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span class="panel-title h4">API Credentials</span>
+    </div>
+    <div class="panel-body h5">
+        <p>
+            User Id: {{credentials.uid}}
+        </p>
+        <p>
+            Token: <span class="longwrap">{{credentials.token}}</span>
+        </p>
+        <button ng-click="genToken()">
+        Generate
+        </button>
+    </div>
+<div>
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Encryption</span>
+    </div>
+    <div class="panel-body h5">
+        <form name="settingsForm">
+          <div class="form-group">
+          <label for="passphrase">Passphrase:</label>
+          <input class="my-border" type="text" id="passphrase" ng-model="encryption.passphrase" placeholder={{encryption.placeholder}}>
+          </div>
+          <div class="form-group">
+          <label for="checkbox">Save Locally</label>
+          <input class="my-border" type="checkbox" id="checkbox" ng-model="encryption.save" defaultChecked=false>
+          </div>
+          <p>
+          <button ng-click="submitPassphrase()">Enter</button>
+          </p>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Login Credentials</span>
+    </div>
+    <div class="panel-body h5">
+        <form name="settingsForm">
+          <div class="form-group">
+          <label for="email">Email:</label>
+          <input class="my-border" type="email" id="email" ng-model="address.email" required>
+          </div>
+          <div class="form-group">
+          <label for="currentpw">Current password:</label>
+          <input class="my-border" type="text" id="currentpw" ng-model="address.currentpw" required>
+          </div>
+          <p>
+          <button ng-click="submitEmail()">Save</button>
+          </p>
+        </form>
+        <form name="settingsForm" novalidate>
+          <div class="form-group">
+          <label for="pw">New password:</label>
+          <input class="my-border" type="text" id="pw" ng-model="password.pw" required>
+          </div>
+          <div class="form-group">
+          <label for="currentpw">Current password:</label>
+          <input class="my-border" type="text" id="currentpw" ng-model="password.currentpw" required>
+          </div>
+          <p>
+          <button ng-click="submitPW()">Save</button>
+          </p>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Sharing Projects From Others</span>
+    </div>
+    <div class="panel-body h5">
+        <ul class="list-group">
+            <li ng-repeat="item in fromShares" class="list-group-item">
+                {{item.project + "  " + item.email}}
+                <span class="spacer">|</span>
+                <span class="glyph" ng-click="deleteFromShare($index)"><span class="glyphicon glyphicon-remove"</span></span>
+            </li>
+        </ul>
+        <div class="form-group">
+        <label for="project">Project:</label>
+        <input type="text" id="project" ng-model="fromShare.project">
+        </div>
+	</br>
+        <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" ng-model="fromShare.email">
+        </div>
+	</br>
+        <button ng-click="submitFromShare()">Share</button>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading h4">
+        <span class="panel-title">Other Settings</span>
+    </div>
+    <div class="panel-body h5">
+        <form name="settingsForm">
+          <div class="form-group">
+          <label for="sms">SMS Gateway Email:</label>
+          <input class="my-border" type="email" id="sms" ng-model="other.sms" required>
+          </div>
+          <p>
+          <button ng-click="submitSMS()">Save</button>
+          </p>
+    </div>
+</div>
+

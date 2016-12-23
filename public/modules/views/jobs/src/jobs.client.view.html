@@ -1,0 +1,29 @@
+<!-- This view displays clickable list of jobs of a project -->
+
+<div>
+
+<!-- Collapsed breadcrumbs only shows left arrow and last crumb -->
+<ol class="my-breadcrumb hidden-md hidden-lg">
+    <li><a href="/#projects"><span class="glyphicon glyphicon-arrow-left"</span></a></li>
+    <li><span class="white">...</span></li>
+    <li class="active">{{projectDisplay}}</li>
+    <span breadcrumb-glyphs  bcglyphs="{useinfo: true, useconfig: true, usedelete: true}" bcinfo="bcinfo" bcfct="bcfct"></span>
+</ol>
+
+<!-- Full breadcrumbs -->
+<ol class="my-breadcrumb visible-md visible-lg">
+    <li><a href="/#projects">Projects</a></li>
+    <li class="active">{{projectDisplay}}</li>
+    <span breadcrumb-glyphs  bcglyphs="{useinfo: true, useconfig: true, usedelete: true}" bcinfo="bcinfo" bcfct="bcfct"></span>
+</ol>
+
+<breadcrumb-info bcinfo="bcinfo"></breadcrumb-info>
+
+<div class="container-fluid">
+<ul class="list-group">
+    <li ng-repeat="job in jobs" class="list-group-item">
+    <span class="target col-xm-2 col-sm-1" ng-click="select(job.id)"><span class="bg-info">{{job.id}}</span></span><span class="col-xm-offset-2 col-sm-offset-1">{{job.name}}</span>
+    </li>
+</ul>
+
+</div>

@@ -1,0 +1,29 @@
+<!-- This view is for managing job settings -->
+
+<div>
+
+<ol class="my-breadcrumb hidden-md hidden-lg">
+    <li><a href="/#locations/{{projectDisplayURI}}/{{jobId}}/{{projectResourceURI}}"><span class="glyphicon glyphicon-arrow-left"</span></a></li>
+    <li><span class="white">...</span></li>
+    <li class="active">settings</li>
+</ol>
+<ol class="my-breadcrumb visible-md visible-lg">
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/#jobs/{{projectDisplayURI}}/{{projectResourceURI}}">{{projectDisplay}}</a></li>
+    <li><a href="/#locations/{{projectDisplayURI}}/{{jobId}}/{{projectResourceURI}}">{{jobId}}</a></li>
+    <li class="active">settings</li>
+</ol>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span class="panel-title">Job "{{jobId}}" Description</span>
+    </div>
+    <div class="panel-body">
+        <input type="text" ng-model="description" placeholder="Description">
+        <p>
+        <button ng-click="submitDescription()">Save</button>
+        </p>
+    </div>
+</div>
+
+</div>
