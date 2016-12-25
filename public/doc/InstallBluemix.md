@@ -101,13 +101,6 @@ substituting a value for <code>MONGO_URL</code> in <code>.env</code>.
 <li>
 <b>Push the app</b>
 <p>
-
-First login to Bluemix.
-
-<pre>
->$ cf login -a api.ng.bluemix.net
-</pre>
-
 The manifest.yaml file contains parameters for the push, such as
 the app name and memory allocation.
 

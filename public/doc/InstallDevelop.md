@@ -56,6 +56,9 @@ your forked repo instead of scriptremote.
 >$ cd scriptremote
 ~$ cp npm-shrinkwrap-dev.json npm-shrinkwrap.json
 >$ npm install
+>$ cd public/lib/forge-bower
+>$ npm install
+>$ npm run minify
 </pre>
 </li>
 <br>
@@ -69,6 +72,7 @@ Copy the sample credentials file and substitue your values
 for the <code>MAILER</code> dummy values:
 
 <pre>
+>$ cd ~/scriptremote
 >$ cp credentials.env .env
 >$ chmod 600 .env
 >$ vim .env
@@ -117,7 +121,7 @@ Server code is in directory <code>app</code>. Registration, login, and password 
 Public files are in directory <code>public</code>. The Angular-based code is in 
 <code>public/modules</code>.  The bash and python script utilities and their tests are in 
 <code>public/scripts</code>. Doc files other than <code>README.md</code> are in
-<code>public/doc</code>.
+<code>doc</code>.
 <p>
 Config files are located in <code>config/env</code>.
 The server configuration is determined by the <code>NODE_ENV</code> environment
@@ -130,11 +134,7 @@ variable. The defined configuration values are:
 <li>cloudfoundry (upload to platform)</li>
 </ul>
 <p>
-The displayed release version is set in <code>config/env/all.js</code>. The 
-<code>grunt build</code> task substitutes the version into files <code>package.json</code> and 
-<code>public/dist/(srio.sh,srio.py)</code>.
-It also renames files <code>application.min.js</code> and <code>application.min.css</code> in 
-<code>public/dist</code> to include the version in the names.
+The displayed release version is set in <code>config/env/all.js</code>. 
 <p>
 The server startup files are server.js, and server_mod.js which returns a promise that
 is useful in test initialization.
@@ -193,13 +193,24 @@ There are no automated end-to-end tests yet.
 <pre> >$ grunt build</pre>
 <p>
 Does compression, cache busting, string substitution, document generation, shrinkwrapping.
-Generated outputs are in:
+Runs in the <code>development</code> configuration.
+The generated outputs are in directories:
 <ul>
 <li><code>public/dist</code></li>
 <li><code>public/doc</code></li>
 <li><code>npm-shrinkwrap.json</code></li>
 <li><code>npm-shrinkwrap-dev.json</code></li>
 </ul>
+<p>
+<code>public/dist</code> includes the minified front-end code and libraries and is
+under version control. The non-release configurations (developement, test)
+instead load individual libraries from <code>public/lib</code> and code
+from <code>public/modules</code>.
+<p>
+The task substitutes the version string into <code>package.json</code>
+and into copies of the script utility files in <code>public/dist</code>.
+For cache busting it includes the version or a hash string in the 
+names of libraries in <code>public/dist</code>. 
 </li>
 </ul>
 

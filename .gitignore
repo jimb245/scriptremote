@@ -1,8 +1,11 @@
-node_modules
-public/lib
-config/sslcerts/*
+./tmp
+./log
+./node_modules
+./public/lib
+./config/sslcerts/*
 .env
-credentials.js
+credentials.py
+credentials.bash
 srio.jobid
 srio.loc_encoded
 srio.msgid
@@ -11,5 +14,5 @@ srio.code
 temp.64
 temp.png
 temp.svg
-public/scripts/bash/test/credentials.bash
+./public/scripts/bash/test/credentials.bash
 *.pyc
