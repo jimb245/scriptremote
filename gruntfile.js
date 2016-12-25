@@ -331,7 +331,7 @@ module.exports = function(grunt) {
         var jsFiles = grunt.file.expand('public/dist/**.js');
         var jsLib = grunt.config.get('applicationJavaScriptLibFiles');
         if (jsFiles.length > jsLib.length + 1) {
-            console.log('Extra .css file in public/dist');
+            console.log('Extra .js file in public/dist');
             return false;
         }
         var woffFiles = grunt.file.expand('public/dist/**.woff');
