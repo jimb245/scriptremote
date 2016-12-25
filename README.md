@@ -6,13 +6,13 @@
 
 ### **Overview**
 
-ScriptRemote is a MEAN-stack project to provide secure remote access to scripted applications from a browser UI. Basically it is a messaging service between scripts running on machines in protected networks and browsers.  The goal is to it make it easy to bring up web UI's for applications for which developing full-custom web or mobile apps is not practical.
+ScriptRemote is a MEAN-stack project to provide secure remote access to scripted applications from a browser UI. Basically it is a messaging service between scripts running on machines in protected networks and browsers.  Using the service it is easy to create web UI's for applications for which developing full-custom web or mobile apps would require too much time or resources.
 
 ### **Features**
 
 * Configurable browser UI based on AngularJS templates
 * Native script-based utilities (bash, python2.7) for script-to-server communication
-* API for adding script or other client interfaces 
+* API for adding other script or client interfaces 
 * Hierarchical message organization
 * Message attached files (text, png, svg)
 * Message sharing with permissions
@@ -27,8 +27,8 @@ In this simulated IOT example, a script sends a message containing some temperat
 The screenshot on the left shows one of the messages viewed under the default UI settings. On the right the settings are changed to use a customized template that better matches the message content.
 
 <div style="text-align:center">
-<img src="public/doc/image/Screenshot_1.png" width="35%" border="5" solid hspace="10"/>
-<img src="public/doc/image/Screenshot_2.png" width="35%" border="5" solid hspace="10"/>
+<img src="public/doc/image/Screenshot_1.png" width="30%" border="5" solid hspace="10"/>
+<img src="public/doc/image/Screenshot_2.png" width="30%" border="5" solid hspace="10"/>
 </div>
 
 
@@ -133,8 +133,8 @@ The 'ng' attributes provide the links to the [**Angular**](https://angularjs.org
 ### **Demo Server**
 
 If you would like to try a few tests with ScriptRemote 
-before installing there is a server at https://scriptremote.com. 
-To use the site:
+before installing there is a demo server  
+<a href="https://scriptremote.com">here</a>.  To use it:
 
 1. Register
 
@@ -174,6 +174,7 @@ To use the site:
 
 7. The messages should now be accessible under **Projects** in the menu bar. Submitting a modified reply to the second message should cause the script to display the new value. If the test system is behind a proxy server you may need to set the HTTPS_PROXY environment variable.
 
+8. There are some limits per user on the amount of data residing on the demo server: 2 projects, up to 10 jobs per project, up to approximately 1MB of message data per job.
 
 ### **Installation**
 
@@ -194,7 +195,7 @@ For a small site not needing high availability, the server can just be a machine
 
 [**Generic private server installation**](public/doc/InstallGeneric.md)
 
-[**Installation for development**](public/doc/InstallDevelop.md)
+[**Installation for development/contributing**](public/doc/InstallDevelop.md)
 
 
     

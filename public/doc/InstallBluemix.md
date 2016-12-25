@@ -30,26 +30,27 @@ and certificate for the ScriptRemote server.
 <br>
 
 <li>
-<b>Install cf and git locally</b>
+<b>Install cf locally</b>
 <p>
-The app will be pushed to Bluemix from a local git repository using the
-Cloud Foundry command line utility cf.  Install cf on your machine from:
+The app will be pushed to Bluemix from a local repository using the
+Cloud Foundry command line utility cf.  Install cf on your system from:
 
 <pre>
 <a href="https://github.com/cloudfoundry/cli">Cloud Foundry CLI</a>
 </pre>
-Install <a href="https://git-scm.com">git</a> using whatever package manager is standard on your machine.
+
+Then login to Bluemix:
+<pre>
+&gt;$ cf login
+</pre>
 </li>
 <br>
 
 <li>
-<b>Clone ScriptRemote repository</b>
+<b>Install ScriptRemote locally</b>
 <p>
 <pre>
->$ cd ~
->$ git clone ...
->$ cd scriptremote
->$ npm install --production
+>$ npm install scriptremote --production
 </pre>
 </li>
 <br>
@@ -66,6 +67,7 @@ Then copy the sample credentials file and substitue your values
 for the <code>MAILER</code> dummy values:
 
 <pre>
+>$ cd scriptremote
 >$ cp credentials.env .env
 >$ chmod 600 .env
 >$ vim .env
@@ -158,7 +160,7 @@ to the server from scripts running in the private network.
 <p>
 Copy the API credentials obtained above to a machine in the private
 network, then copy the bash utility script from the local 
-scriptremote repository or download it:
+scriptremote installation or download it:
 
 <pre>
 >$ wget https://scriptremote/dist/srio.sh

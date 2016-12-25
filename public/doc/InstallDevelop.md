@@ -4,7 +4,7 @@
 </div>
 
 <h2>
-Installation For Development
+Installation For Development/Contributing
 </h2>
 
 <ol>
@@ -51,7 +51,7 @@ If you plan to contribute to the project then the clone would be from
 your forked repo instead of scriptremote.
 
 <pre>
->$ cd ~
+>$ cd ~ (or your preferred install location)
 >$ git clone https://github.com/jimb245/scriptremote | <your-fork>
 >$ cd scriptremote
 ~$ cp npm-shrinkwrap-dev.json npm-shrinkwrap.json
@@ -183,7 +183,7 @@ There are ~400 unit tests, of four types:
 <li> Server unit tests based on mocha, should, supertest</li>
 </ul>
 <p>
-There is no automation of end-to-end testing yet.
+There are no automated end-to-end tests yet.
 </li>
 
 <p>
@@ -193,7 +193,7 @@ There is no automation of end-to-end testing yet.
 <pre> >$ grunt build</pre>
 <p>
 Does compression, cache busting, string substitution, document generation, shrinkwrapping.
-Outputs are in:
+Generated outputs are in:
 <ul>
 <li><code>public/dist</code></li>
 <li><code>public/doc</code></li>

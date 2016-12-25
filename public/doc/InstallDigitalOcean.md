@@ -48,15 +48,13 @@ When setting up a firewall as described in b), be sure to allow access on ports 
 <br>
 
 <li>
-<b>Clone ScriptRemote</b>
+<b>Install ScriptRemote</b>
 <p>
 Connect to the droplet as the non-root user created in step 3, then:
 
 <pre>
->$ cd ~
->$ git clone ...
->$ cd scriptremote
->$ npm install --production
+>$ cd ~ (or your preferred install location)
+>$ npm install scriptremote --production
 </pre>
 </li>
 <br>
@@ -72,6 +70,7 @@ Then copy the sample credentials file and substitue your values
 for the <code>MAILER</code> dummy values:
 <p>
 <pre>
+>$ cd ~/scriptremote
 >$ cp credentials.env .env
 >$ chmod 600 .env
 >$ vim .env
@@ -357,7 +356,7 @@ one used to for the admin account.
 <b>Server logging</b>
 <p>
 Logging of server responses is enabled by default. 
-The log directory is scriptremote/log. The log file format 
+The log directory is ~/scriptremote/log. The log file format 
 is 'Apache common'. It is recommended to monitor the logs
 for signs of instrusion, such as an unknown source ip
 successfully accessing an endpoint other than the
@@ -428,8 +427,8 @@ You may want to enable limits on the amount of message data that can be
 sent to the server, for example to help protect against scripting errors
 that could produce very large or very many messages.
 The available limits are defined in <pre>config/env/all.js</pre>
-Any of them may be set as environment variables prior to starting
-the server.
+Any of them may be set as environment variables or added to the .env file
+prior to starting the server.
 </li>
 <br>
 

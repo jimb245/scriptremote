@@ -3,7 +3,7 @@
 </div>
 
 <h2>
-Installation For Development
+Installation For Development/Contributing
 </h2>
 
 <ol>
@@ -50,7 +50,7 @@ If you plan to contribute to the project then the clone would be from
 your forked repo instead of scriptremote.
 
 <pre>
-&gt;$ cd ~
+&gt;$ cd ~ (or your preferred install location)
 &gt;$ git clone <a href="https://github.com/jimb245/scriptremote">https://github.com/jimb245/scriptremote</a> | <your-fork>
 &gt;$ cd scriptremote
 ~$ cp npm-shrinkwrap-dev.json npm-shrinkwrap.json
@@ -109,14 +109,17 @@ access the site with a browser.
 Code Organization
 </h3></p>
 <p><p>
-Code organization is roughly that of <a href="http://meanjs.org/docs/0.3.x">meanjs.org v0.3</a>.</p>
+Code organization is roughly similar to <a href="http://meanjs.org/docs/0.3.x">meanjs.org v0.3</a>.</p>
 <p><p>
 Server code is in directory <code>app</code>. Registration, login, and password reset pages are handled by the server directly rather than by the Angular framework. The login page is compatible with password managers. The server template manager is <a href="http://handlebarsjs.com">handlebars</a> and the template layouts are in <code>app/views/layouts</code>, one for the server-managed pages and one for Angular. </p>
 <p><p>
-The Angular-based code is in <code>public</code> and <code>public/modules</code>.</p>
+Public files are in directory <code>public</code>. The Angular-based code is in 
+<code>public/modules</code>.  The bash and python script utilities and their tests are in 
+<code>public/scripts</code>. Doc files other than <code>README.md</code> are in
+<code>/doc</code>.</p>
 <p><p>
 Config files are located in <code>config/env</code>.
-The configuration is determined by the <code>NODE_ENV</code> environment
+The server configuration is determined by the <code>NODE_ENV</code> environment
 variable. The defined configuration values are:</p>
 <ul>
 <li>development</li>
@@ -126,16 +129,15 @@ variable. The defined configuration values are:</p>
 <li>cloudfoundry (upload to platform)</li>
 </ul>
 <p>
-The version is set in <code>config/env/all.js</code>. The grunt build task
-substitutes the version into <code>package.json</code> and <code>public/dist/srio.sh,py</code>.
-It renames the application.min.js and application.min.css files in <code>public/dist</code>
-to include the version in the names.
+The displayed release version is set in <code>config/env/all.js</code>. The 
+<code>grunt build</code> task substitutes the version into files <code>package.json</code> and 
+<code>public/dist/(srio.sh,srio.py)</code>.
+It also renames files <code>application.min.js</code> and <code>application.min.css</code> in 
+<code>public/dist</code> to include the version in the names.
 <p>
 The server startup files are server.js, and server_mod.js which returns a promise that
 is useful in test initialization.
 <P>
-The bash and python script utilities and their tests are in <code>public/scripts</code>.
-<p>
 <h3>Grunt Tasks</h3>
 <ul>
 <li>
@@ -180,7 +182,7 @@ There are ~400 unit tests, of four types:
 <li> Server unit tests based on mocha, should, supertest</li>
 </ul>
 <p>
-There is no automation of end-to-end testing yet.
+There are no automated end-to-end tests yet.
 </li>
 
 <p>
@@ -189,8 +191,8 @@ There is no automation of end-to-end testing yet.
 <p>
 <pre> &gt;$ grunt build</pre>
 <p>
-Does compression, cache busting, document generation, shrinkwrapping.
-Outputs are in:
+Does compression, cache busting, string substitution, document generation, shrinkwrapping.
+Generated outputs are in:
 <ul>
 <li><code>public/dist</code></li>
 <li><code>/doc</code></li>

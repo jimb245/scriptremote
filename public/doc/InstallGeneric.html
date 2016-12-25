@@ -26,15 +26,13 @@ the <code>MONGO_URL</code> or <code>MONGO_HOST_PORT</code> environment variable 
 and you may need to add MongoDB credentials to the .env file.
 </li>
 <li>
-<b>Clone ScriptRemote</b>
+<b>Install ScriptRemote</b>
 <p>
 Login as a non-root user
 
 <pre>
-&gt;$ cd ~
-&gt;$ git clone ...
-&gt;$ cd scriptremote
-&gt;$ npm install --production
+&gt;$ cd ~ (or your preferred install location)
+&gt;$ npm install scriptremote --production
 </pre>
 </li>
 <br>
@@ -50,7 +48,9 @@ just for this purpose.
 Then copy the sample credentials file and substitue your values 
 for the MAILER dummy values:
 
-<pre>
+<pr
+>$ cd ~/scriptremote
+e
 &gt;$ cp credentials.env .env
 &gt;$ chmod 600 .env
 &gt;$ vim .env
@@ -150,7 +150,7 @@ to the server from scripts.
 <p>
 Copy the API credentials obtained above to a test machine,
 then copy the bash utility script from the local scriptremote 
-repository or download it:
+installation or download it:
 
 <pre>
 &gt;$ wget <a href="https://scriptremote/dist/srio.sh">https://scriptremote/dist/srio.sh</a>
@@ -262,8 +262,8 @@ You may want to enable limits on the amount of message data that can be
 sent to the server, for example to help protect against scripting errors
 that could produce very large or very many messages.
 The available limits are defined in <pre>config/env/all.js</pre>
-Any of them may be set as environment variables or added to .env prior to starting
-the server.
+Any of them may be set as environment variables or added to the .env 
+file prior to starting the server.
 </li>
 <br>
 </ol>

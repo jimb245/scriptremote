@@ -4,12 +4,12 @@
 
 
 <h3 id="-overview-"><strong>Overview</strong></h3>
-<p>ScriptRemote is a MEAN-stack project to provide secure remote access to scripted applications from a browser UI. Basically it is a messaging service between scripts running on machines in protected networks and browsers.  The goal is to it make it easy to bring up web UI&#39;s for applications for which developing full-custom web or mobile apps is not practical.</p>
+<p>ScriptRemote is a MEAN-stack project to provide secure remote access to scripted applications from a browser UI. Basically it is a messaging service between scripts running on machines in protected networks and browsers.  Using the service it is easy to create web UI&#39;s for applications for which developing full-custom web or mobile apps would require too much time or resources.</p>
 <h3 id="-features-"><strong>Features</strong></h3>
 <ul>
 <li>Configurable browser UI based on AngularJS templates</li>
 <li>Native script-based utilities (bash, python2.7) for script-to-server communication</li>
-<li>API for adding script or other client interfaces </li>
+<li>API for adding other script or client interfaces </li>
 <li>Hierarchical message organization</li>
 <li>Message attached files (text, png, svg)</li>
 <li>Message sharing with permissions</li>
@@ -21,8 +21,8 @@
 <p>In this simulated IOT example, a script sends a message containing some temperatures obtained from sensors and the current state of a fan switch. It then waits for a reply message, which can leave the fan state unchanged or flip it. The message cycle repeats indefinitely.</p>
 <p>The screenshot on the left shows one of the messages viewed under the default UI settings. On the right the settings are changed to use a customized template that better matches the message content.</p>
 <div style="text-align:center">
-<img src="/doc/image/Screenshot_1.png" width="35%" border="5" solid hspace="10"/>
-<img src="/doc/image/Screenshot_2.png" width="35%" border="5" solid hspace="10"/>
+<img src="/doc/image/Screenshot_1.png" width="30%" border="5" solid hspace="10"/>
+<img src="/doc/image/Screenshot_2.png" width="30%" border="5" solid hspace="10"/>
 </div>
 
 
@@ -112,8 +112,7 @@ SR_end
 </ul>
 <h3 id="-demo-server-"><strong>Demo Server</strong></h3>
 <p>If you would like to try a few tests with ScriptRemote 
-before installing there is a server at <a href="https://scriptremote.com">https://scriptremote.com</a>. 
-To use the site:</p>
+before installing there is a demo server<br><a href="https://scriptremote.com">here</a>.  To use it:</p>
 <ol>
 <li><p>Register</p>
 </li>
@@ -147,6 +146,8 @@ To use the site:</p>
 </li>
 <li><p>The messages should now be accessible under <strong>Projects</strong> in the menu bar. Submitting a modified reply to the second message should cause the script to display the new value. If the test system is behind a proxy server you may need to set the HTTPS_PROXY environment variable.</p>
 </li>
+<li><p>There are some limits per user on the amount of data residing on the demo server: 2 projects, up to 10 jobs per project, up to approximately 1MB of message data per job.</p>
+</li>
 </ol>
 <h3 id="-installation-"><strong>Installation</strong></h3>
 <p>Installation methods vary depending on the platform chosen and level of availability needed for the service. Only simple installation options can be covered here.</p>
@@ -158,7 +159,7 @@ A basic platform choice is between public and private servers.</p>
 <p><a href="/doc/InstallDigitalOcean.html"><strong>Installation on Digital Ocean Droplet</strong></a></p>
 <p><a href="/doc/InstallBluemix.html"><strong>Installation on IBM Bluemix</strong></a></p>
 <p><a href="/doc/InstallGeneric.html"><strong>Generic private server installation</strong></a></p>
-<p><a href="/doc/InstallDevelop.html"><strong>Installation for development</strong></a></p>
+<p><a href="/doc/InstallDevelop.html"><strong>Installation for development/contributing</strong></a></p>
 <h3 id="-author-"><strong>Author</strong></h3>
 <p>Jim Brandt</p>
 <h3 id="-license-"><strong>License</strong></h3>
