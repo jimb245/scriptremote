@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://jbrandt@bitbucket.org/jbrandt/SR3.git"
+    "url": "https://github.com/jimb245/scriptremote.git"
   },
   "engines": {
     "node": "4.6.2",
