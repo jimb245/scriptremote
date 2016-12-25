@@ -20,7 +20,7 @@ module.exports = {
                     'public/lib/angular-resource/angular-resource.min.js', 
                     'public/lib/jquery/dist/jquery.min.js',
                     'public/lib/bootstrap/dist/js/bootstrap.min.js',
-                    'public/lib/forge/js/forge.min.js',
+                    'public/lib/forge-bower/js/forge.min.js',
                     'public/lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js'
                 ]
             },
