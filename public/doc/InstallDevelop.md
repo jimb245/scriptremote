@@ -183,6 +183,12 @@ There are ~400 unit tests, of four types:
 <li> Server unit tests based on mocha, should, supertest</li>
 </ul>
 <p>
+If the HTTP 429 error occurs during a test run it is probably because
+the brute force login protection data has become stale. To clear it
+use the <code>mongo</code> commandline utility to connect to the 
+<code>scriptremote-test</code> database and delete the 
+<code>bruteforce</code> collection.
+<p>
 There are no automated end-to-end tests yet.
 </li>
 
