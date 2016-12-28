@@ -1,8 +1,4 @@
 
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
-
 <h2>
 Installation On DigitalOcean Ubuntu 14.04 Droplet
 </h2>
@@ -55,6 +51,7 @@ Connect to the droplet as the non-root user created in step 3, then:
 <pre>
 >$ cd ~ (or your preferred install location)
 >$ npm install scriptremote --production
+>$ mv node_modules/scriptremote .
 </pre>
 </li>
 <br>

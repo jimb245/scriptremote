@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Python 2.7 utilities for Scriptremote, Version 1.0.0
+# Python 2.7 utilities for Scriptremote, Version 1.0.1
 #
 # Dependencies: urllib2, hashlib, hmac, requests, pycrypto, passlib
 #

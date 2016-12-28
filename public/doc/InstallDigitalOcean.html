@@ -1,8 +1,10 @@
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
 
-<h2>
+<!-- layout HTML file -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <div align="right"> <a href="/">Home</a> </div>
+        <h2>
 Installation On DigitalOcean Ubuntu 14.04 Droplet
 </h2>
 
@@ -54,6 +56,7 @@ Connect to the droplet as the non-root user created in step 3, then:
 <pre>
 &gt;$ cd ~ (or your preferred install location)
 &gt;$ npm install scriptremote --production
+&gt;$ mv node_modules/scriptremote .
 </pre>
 </li>
 <br>
@@ -440,3 +443,7 @@ prior to starting the server.
 <a href="https://www.digitalocean.com/community/tutorials/building-for-production-web-applications-overview"> Building for Production: Web Applications</a>
 <br>
 <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04">How To Set Up a Firewall Using Iptables on Ubuntu 14.04</a></p>
+
+    </body>
+</html>
+

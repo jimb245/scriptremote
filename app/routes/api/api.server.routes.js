@@ -5,7 +5,6 @@
 /**
  * @api /:base
  * @apiGroup Overview
- * @apiVersion 1.0.0
  *
  * @apiDescription
  * Following are endpoints to access project data for both 
@@ -159,7 +158,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects Projects owned by user
      * @apiName GetProjects
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns array of projects owned by the user. Array elements are
      * tuples containing name, flag indicating if project is encrypted, and
@@ -177,7 +175,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project Project properties
      * @apiName GetProject
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns parameters of a project
      *
@@ -205,7 +202,6 @@ module.exports = function(app) {
      * @api {post} /:base/projects Create project
      * @apiName CreateProject
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Starts a new project with user as owner.  
      * 
@@ -228,7 +224,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/share Project sharing
      * @apiName ShareProject
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Updates the authorized users of a project.
      * When adding a user the access level determines the actions 
@@ -254,7 +249,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/description Project description
      * @apiName ProjectDescription
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Updates the description of a project.
      *
@@ -273,7 +267,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/notify Project notifications
      * @apiName ProjectNotifications
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Updates the notification subscribers of a project
      *
@@ -295,7 +288,6 @@ module.exports = function(app) {
      * @api {delete} /:base/projects/:project Delete project
      * @apiName DeleteProject
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Deletes a project and all its related data
      *
@@ -312,7 +304,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects-share/:user Projects shared by another user
      * @apiName GetProjectsShare
      * @apiGroup Projects
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns array of projects owned by another user that are shared to
      * authenticating user.  The :owner parameter is the email of owner. Array elements are 
@@ -337,7 +328,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs Jobs belonging to a project
      * @apiName ProjectJobs
      * @apiGroup Jobs
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns array of jobs of a project, including
      ^ id, name, and timestamp
@@ -355,7 +345,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid Job properties
      * @apiName GetJob
      * @apiGroup Jobs
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns parameters for a job
      *
@@ -385,7 +374,6 @@ module.exports = function(app) {
      * @api {post} /:base/projects/:project/jobs Create job
      * @apiName CreateJob
      * @apiGroup Jobs
-     * @apiVersion 1.0.0
      *
      * @apiDescription Starts a new job in a project, returns job id.  
      *
@@ -406,7 +394,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/jobs/:job/description Job description
      * @apiName JobDescription
      * @apiGroup Jobs
-     * @apiVersion 1.0.0
      *
      * @apiDescription Updates the description of a job
      *
@@ -425,7 +412,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/jobs/:jobid End job
      * @apiName EndJob
      * @apiGroup Jobs
-     * @apiVersion 1.0.0
      *
      * @apiDescription Ends a job - no more messages can be added to it
      *
@@ -444,7 +430,6 @@ module.exports = function(app) {
      * @api {delete} /:base/projects/:project/jobs/:jobid Delete job
      * @apiName DeleteJob
      * @apiGroup Jobs
-     * @apiVersion 1.0.0
      *
      * @apiDescription Deletes a job and all its related data
      *
@@ -465,7 +450,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations Locations of a job
      * @apiName GetLocations
      * @apiGroup Locations
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns array of location names for a job
      *
@@ -482,7 +466,6 @@ module.exports = function(app) {
      * @api {post} /:base/projects/:project/jobs/:jobid/locations Create location
      * @apiName CreateLocation
      * @apiGroup Locations
-     * @apiVersion 1.0.0
      *
      * @apiDescription Starts a new location in a job  
      *
@@ -502,7 +485,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location Location properties
      * @apiName GetLocation
      * @apiGroup Locations
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns parameters of a location
      *
@@ -523,7 +505,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/jobs/:jobid/locations/:location/description Location description
      * @apiName LocationDescription
      * @apiGroup Locations
-     * @apiVersion 1.0.0
      *
      * @apiDescription Updates the description of a location
      *
@@ -542,7 +523,6 @@ module.exports = function(app) {
      * @api {delete} /:base/projects/:project/jobs/:jobid/locations/:location Delete location
      * @apiName DeleteLocation
      * @apiGroup Locations
-     * @apiVersion 1.0.0
      *
      * @apiDescription Deletes a location and all its related data
      *
@@ -559,7 +539,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs Messages at location
      * @apiName GetMessages
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns array of message id's and timestamps for a location
      *
@@ -576,7 +555,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid Message content
      * @apiName GetMessage
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns the contents of a message:
      *
@@ -604,7 +582,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/shorts Message short url's
      * @apiName Shorts
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns json array of shortened url keys for a message.
      *                      This is mainly for testing.
@@ -622,7 +599,6 @@ module.exports = function(app) {
      * @api {post} /:base/projects/:project/jobs/:jobid/locations/:location/msgs Create message
      * @apiName CreateMessage
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Adds a new message to given job/location. Location may already
      *  exist or be new. Returns new message id.
@@ -666,7 +642,6 @@ module.exports = function(app) {
      * @api {post} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/files Add file
      * @apiName AddFile
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Uploads a file to attach to a message,
      * using multipart/form-data encoding. The first part is the file
@@ -700,7 +675,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/reply Put reply
      * @apiName PutReply
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Replaces the original reply content of a message. Fails if a reply PUT
      * was done previously. Normally used by browser clients.
@@ -720,7 +694,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/reply Get reply
      * @apiName GetReply
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Waits until a PUT reply to a message has occurred then returns the 
      * new reply content.  Normally used by script clients. The request may timeout or be 
@@ -740,7 +713,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/reply_ack Get acknowledge
      * @apiName GetAck
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns reply_ack value of the message. A true value indicates successful
      * GET occurred following a reply PUT. Normally used by browser clients.
@@ -759,7 +731,6 @@ module.exports = function(app) {
      * @api {put} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/reply_ack Put acknowledge
      * @apiName PutAck
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Acknowledges a successful GET of reply following a reply PUT. Normally used by script clients.
      *
@@ -776,7 +747,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/files File keys
      * @apiName FileKeys
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Returns array of the file keys for the attachments of a message. The keys are indentifiers that were defined in the requests that uploaded the files.
      *
@@ -793,7 +763,6 @@ module.exports = function(app) {
      * @api {get} /:base/projects/:project/jobs/:jobid/locations/:location/msgs/:msgid/files/:file_key Get file
      * @apiName GetFile
      * @apiGroup Messages
-     * @apiVersion 1.0.0
      *
      * @apiDescription Downloads a file attachment of a message using its key. Returns file type in the
      * Content-Type header and file content as the response body.

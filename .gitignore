@@ -1,8 +1,8 @@
-./tmp/
-./log/
-./node_modules/
-./public/lib/
-./config/sslcerts/
+tmp/
+log/
+node_modules/
+public/lib/
+config/sslcerts/
 .env
 credentials.py
 credentials.bash

@@ -5,7 +5,6 @@ define({ "api": [
     "title": "Create job",
     "name": "CreateJob",
     "group": "Jobs",
-    "version": "1.0.0",
     "description": "<p>Starts a new job in a project, returns job id.</p>",
     "parameter": {
       "fields": {
@@ -40,6 +39,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Jobs"
   },
@@ -49,7 +49,6 @@ define({ "api": [
     "title": "Delete job",
     "name": "DeleteJob",
     "group": "Jobs",
-    "version": "1.0.0",
     "description": "<p>Deletes a job and all its related data</p>",
     "success": {
       "examples": [
@@ -60,6 +59,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Jobs"
   },
@@ -69,7 +69,6 @@ define({ "api": [
     "title": "End job",
     "name": "EndJob",
     "group": "Jobs",
-    "version": "1.0.0",
     "description": "<p>Ends a job - no more messages can be added to it</p>",
     "parameter": {
       "fields": {
@@ -92,6 +91,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Jobs"
   },
@@ -101,7 +101,6 @@ define({ "api": [
     "title": "Job properties",
     "name": "GetJob",
     "group": "Jobs",
-    "version": "1.0.0",
     "description": "<p>Returns parameters for a job</p>",
     "success": {
       "fields": {
@@ -152,6 +151,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Jobs"
   },
@@ -161,7 +161,6 @@ define({ "api": [
     "title": "Job description",
     "name": "JobDescription",
     "group": "Jobs",
-    "version": "1.0.0",
     "description": "<p>Updates the description of a job</p>",
     "parameter": {
       "fields": {
@@ -184,6 +183,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Jobs"
   },
@@ -193,7 +193,6 @@ define({ "api": [
     "title": "Jobs belonging to a project",
     "name": "ProjectJobs",
     "group": "Jobs",
-    "version": "1.0.0",
     "description": "<p>Returns array of jobs of a project, including ^ id, name, and timestamp</p>",
     "success": {
       "examples": [
@@ -204,6 +203,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Jobs"
   },
@@ -213,7 +213,6 @@ define({ "api": [
     "title": "Create location",
     "name": "CreateLocation",
     "group": "Locations",
-    "version": "1.0.0",
     "description": "<p>Starts a new location in a job</p>",
     "parameter": {
       "fields": {
@@ -242,6 +241,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Locations"
   },
@@ -251,7 +251,6 @@ define({ "api": [
     "title": "Delete location",
     "name": "DeleteLocation",
     "group": "Locations",
-    "version": "1.0.0",
     "description": "<p>Deletes a location and all its related data</p>",
     "success": {
       "examples": [
@@ -262,6 +261,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Locations"
   },
@@ -271,7 +271,6 @@ define({ "api": [
     "title": "Location properties",
     "name": "GetLocation",
     "group": "Locations",
-    "version": "1.0.0",
     "description": "<p>Returns parameters of a location</p>",
     "success": {
       "fields": {
@@ -306,6 +305,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Locations"
   },
@@ -315,7 +315,6 @@ define({ "api": [
     "title": "Locations of a job",
     "name": "GetLocations",
     "group": "Locations",
-    "version": "1.0.0",
     "description": "<p>Returns array of location names for a job</p>",
     "success": {
       "examples": [
@@ -326,6 +325,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Locations"
   },
@@ -335,7 +335,6 @@ define({ "api": [
     "title": "Location description",
     "name": "LocationDescription",
     "group": "Locations",
-    "version": "1.0.0",
     "description": "<p>Updates the description of a location</p>",
     "parameter": {
       "fields": {
@@ -358,6 +357,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Locations"
   },
@@ -367,7 +367,6 @@ define({ "api": [
     "title": "Add file",
     "name": "AddFile",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Uploads a file to attach to a message, using multipart/form-data encoding. The first part is the file key which is an identifer that can be referenced in other message content or later request url's. The remaining parts contain the file contents.</p>",
     "header": {
       "fields": {
@@ -408,6 +407,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -417,7 +417,6 @@ define({ "api": [
     "title": "Create message",
     "name": "CreateMessage",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Adds a new message to given job/location. Location may already exist or be new. Returns new message id.</p>",
     "parameter": {
       "fields": {
@@ -458,6 +457,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -467,7 +467,6 @@ define({ "api": [
     "title": "File keys",
     "name": "FileKeys",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Returns array of the file keys for the attachments of a message. The keys are indentifiers that were defined in the requests that uploaded the files.</p>",
     "success": {
       "examples": [
@@ -478,6 +477,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -487,7 +487,6 @@ define({ "api": [
     "title": "Get acknowledge",
     "name": "GetAck",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Returns reply_ack value of the message. A true value indicates successful GET occurred following a reply PUT. Normally used by browser clients.</p>",
     "success": {
       "examples": [
@@ -498,6 +497,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -507,8 +507,8 @@ define({ "api": [
     "title": "Get file",
     "name": "GetFile",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Downloads a file attachment of a message using its key. Returns file type in the Content-Type header and file content as the response body.</p>",
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -518,7 +518,6 @@ define({ "api": [
     "title": "Message content",
     "name": "GetMessage",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Returns the contents of a message:</p>",
     "success": {
       "fields": {
@@ -578,6 +577,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -587,7 +587,6 @@ define({ "api": [
     "title": "Messages at location",
     "name": "GetMessages",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Returns array of message id's and timestamps for a location</p>",
     "success": {
       "examples": [
@@ -598,6 +597,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -607,7 +607,6 @@ define({ "api": [
     "title": "Get reply",
     "name": "GetReply",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Waits until a PUT reply to a message has occurred then returns the new reply content.  Normally used by script clients. The request may timeout or be killed during very long waits.  Client should allow for this and also implement any desired time limits.</p>",
     "success": {
       "examples": [
@@ -618,6 +617,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -627,7 +627,6 @@ define({ "api": [
     "title": "Put acknowledge",
     "name": "PutAck",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Acknowledges a successful GET of reply following a reply PUT. Normally used by script clients.</p>",
     "success": {
       "examples": [
@@ -638,6 +637,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -647,7 +647,6 @@ define({ "api": [
     "title": "Put reply",
     "name": "PutReply",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Replaces the original reply content of a message. Fails if a reply PUT was done previously. Normally used by browser clients.</p>",
     "parameter": {
       "fields": {
@@ -670,6 +669,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -679,7 +679,6 @@ define({ "api": [
     "title": "Message short url's",
     "name": "Shorts",
     "group": "Messages",
-    "version": "1.0.0",
     "description": "<p>Returns json array of shortened url keys for a message. This is mainly for testing.</p>",
     "success": {
       "examples": [
@@ -690,6 +689,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Messages"
   },
@@ -698,8 +698,8 @@ define({ "api": [
     "url": "/:base",
     "title": "",
     "group": "Overview",
-    "version": "1.0.0",
     "description": "<p>Following are endpoints to access project data for both browser and script clients. The browser client is used mainly to read messages and respond to reply requests from script clients. Script clients create projects, jobs, and send messages to them.</p> <p>  This does not include endpoints that are used only by browser client to controll the UI. <p> All endpoints have a <tt>:base</tt> route parameter that depends on the type of client, corresponding to the fact that browser and script clients use different authentication methods.. Browser clients should use <tt>'/brsapi/projects/...'</tt> url's,  which require login/session authentication. <p> Script clients should use <tt>'/api/projects/...'</tt> url's, which require a Basic Auth header. The name and password fields of the header are the user id and api token, respectively, obtained from the  <tt>Settings</tt> page of the website. Each time a token is generated on the <tt>Settings</tt> page it becomes the current token value.  The  token value used in the request that creates a job is stored with the job.  Later requests  that address a specific job can use either the job's stored token value  or the current user value in the auth header. Requests not addressing  a job need to use the current user token value. This permits a new token  to be generated anytime without affecting existing jobs. <p> Endpoints that are project-specific use a <tt>:project</tt> route parameter that depends on the project ownership. A project is owned by the user who created it. For a project owned by the authenticated user the project route  parameter is just the project name.  For a project owned by a  different user the project route parameter is the project name  followed by the owner's email address, separated by a '~'. The  project owner controls the list of other users permitted to access the project. <p> Route params defined by the client (project, location, file_key) should use url encoding when needed. <p> For <tt>/brsapi</tt> routes, requests that include data must use json.  For <tt>/api</tt> routes requests with data can use json or form encoding.  Requests that upload files use multipart/form-data encoding. <p> Responses are json objects except for file downloads. The json includes a  field 'SR_status' with value 'OK' if successful or a  message if not. For file downloads the response body is the file contents. <p> Response result codes: <ul>  <li>200 - success  <li>400 - input error other than \"url not found\"  <li>401 - auth error  <li>404 - resource url not found  <li>500 - server error </ul> <p> Encryption <p> For an encrypted project the url's will contain encrypted items. The server is mostly unaffected by the encryption, except for some additional flags and hashes added to the data. Script clients  that implement encryption need to manage the conversion between encrypted and unencrypted url's. The script client also needs to be consistent with the browser client, which expects all  the user-defined data items to be encrypted: <ul>  <li>project names  <li>job names  <li>location names  <li>message content name  <li>message content values  <li>reply message content name  <li>reply message content values  <li>file tags  <li>file contents </ul> <p>The user-defined items that can occur in url's are project names, location names, and file tags. Jobs and messages are identified by server-generated id's and these do not need to be encrypted.</p> <p>The encryption method is aes-256 ctr and the formatting must be either:</p> <p> 1) openssl enc <p> This is the format produced by the openssl command with  an 8-byte salt and a passphrase, using base64 output.  Any slash ('/') characters in the base64 output are then replaced by dash ('-') characters for url safety. <p> 2) 'normal' format <p> This is a format that can be produced using common crypto  libraries: 12-byte-salt + ciphertext, in modified base64 with '+-' as the additional characters instead of '+/'. The encryption iv is the 12-byte salt + 4-byte counter, initially zero. The salt is longer than the usual 8 bytes to reduce the possibility of a repeat within the lifetime of a project since the passphrase remains constant.  A 4 byte counter  still allows encrypting items up to 64GB, much larger than  expected in practice. <p> The encryption key is generated from the passphrase and an 8-byte salt using pbkdf2 with a sha256 hash and 10000 rounds. Like the passphrase, the 8-byte salt and key for a project are fixed at the time of creation. The 8-byte salt is stored with the project in the server. <p> For either encryption format, reply content is also expected to be  authenticated in both directions using a sha256 digest in hex format,  with the passphrase used as the key. The string to be authenticated  is formed by concatenating the encrypted key-value pairs, in order.  The computed digest is added as an extra key-value pair with a  key of 'hmac'.  <p>For encrypted shared projects the <tt>:project</tt> route parameter is the encrypted project name followed by the plaintext owner's email, separated by a tilde character.</p>",
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Overview",
     "name": "Base"
@@ -710,7 +710,6 @@ define({ "api": [
     "title": "Create project",
     "name": "CreateProject",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Starts a new project with user as owner.</p>",
     "parameter": {
       "fields": {
@@ -751,6 +750,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -760,7 +760,6 @@ define({ "api": [
     "title": "Delete project",
     "name": "DeleteProject",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Deletes a project and all its related data</p>",
     "success": {
       "examples": [
@@ -771,6 +770,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -780,7 +780,6 @@ define({ "api": [
     "title": "Project properties",
     "name": "GetProject",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Returns parameters of a project</p>",
     "success": {
       "fields": {
@@ -844,6 +843,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -853,7 +853,6 @@ define({ "api": [
     "title": "Projects owned by user",
     "name": "GetProjects",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Returns array of projects owned by the user. Array elements are tuples containing name, flag indicating if project is encrypted, and AES key generation salt (empty string for openssl format).</p>",
     "success": {
       "examples": [
@@ -864,6 +863,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -873,7 +873,6 @@ define({ "api": [
     "title": "Projects shared by another user",
     "name": "GetProjectsShare",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Returns array of projects owned by another user that are shared to authenticating user.  The :owner parameter is the email of owner. Array elements are tuples containing name, flag indicating if project is encrypted, and AES key generation salt (empty string if none). This is mainly used to determine the encrypted project name corresponding to a plaintext name.</p>",
     "success": {
       "examples": [
@@ -884,6 +883,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -893,7 +893,6 @@ define({ "api": [
     "title": "Project description",
     "name": "ProjectDescription",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Updates the description of a project.</p>",
     "parameter": {
       "fields": {
@@ -916,6 +915,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -925,7 +925,6 @@ define({ "api": [
     "title": "Project notifications",
     "name": "ProjectNotifications",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Updates the notification subscribers of a project</p>",
     "parameter": {
       "fields": {
@@ -954,6 +953,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   },
@@ -963,7 +963,6 @@ define({ "api": [
     "title": "Project sharing",
     "name": "ShareProject",
     "group": "Projects",
-    "version": "1.0.0",
     "description": "<p>Updates the authorized users of a project. When adding a user the access level determines the actions permitted for the user. 'read' does not allow creating jobs in the project or replying to messages. 'reply' adds permission to reply to messages for any job in the project. 'write' adds permission to create or delete jobs.</p>",
     "parameter": {
       "fields": {
@@ -998,6 +997,7 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
     "filename": "app/routes/api/api.server.routes.js",
     "groupTitle": "Projects"
   }

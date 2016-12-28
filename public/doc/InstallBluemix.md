@@ -1,8 +1,4 @@
 
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
-
 <h2>
 Installation On IBM Bluemix Platfrom
 </h2>
@@ -50,7 +46,9 @@ Then login to Bluemix:
 <b>Install ScriptRemote locally</b>
 <p>
 <pre>
+>$ cd ~ (or your preferred install location)
 >$ npm install scriptremote --production
+>$ mv node_modules/scriptremote .
 </pre>
 </li>
 <br>

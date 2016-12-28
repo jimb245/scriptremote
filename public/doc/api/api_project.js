@@ -1,6 +1,6 @@
 define({
-  "name": "ScriptRemote",
-  "version": "1.0.0",
+  "name": "ScriptRemote v1.0.1",
+  "version": "1.0.1",
   "description": "API documentation for project endpoints",
   "title": "Custom apiDoc browser title",
   "url": "",
@@ -40,14 +40,14 @@ define({
     "GetFile"
   ],
   "template": {
-    "withCompare": true,
+    "withCompare": false,
     "withGenerator": true
   },
   "sampleUrl": false,
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-12-25T05:55:03.775Z",
+    "time": "2016-12-27T20:45:38.632Z",
     "url": "http://apidocjs.com",
     "version": "0.16.1"
   }

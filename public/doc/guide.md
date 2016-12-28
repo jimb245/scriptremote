@@ -1,8 +1,4 @@
 
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
-
 <h2>
 ScriptRemote Guide
 </h2>
@@ -132,8 +128,8 @@ example through setting environment variables.
 <p>
 While the user id is fixed, a new token can be generated anytime
 and becomes the 'current' token.  When a job starts its token must
-match the current value. However the server stores the token with 
-a job and thereafter all requests from the script related to 
+match the current (hashed) value. However the server stores the (hashed) token 
+with a job and thereafter all requests from the script related to 
 the job can continue to use the same value, even if new tokens 
 are generated in the meantime.
 <p>

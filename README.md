@@ -1,8 +1,4 @@
 
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
-
 
 ### **Overview**
 
@@ -27,8 +23,8 @@ In this simulated IOT example, a script sends a message containing some temperat
 The screenshot on the left shows one of the messages viewed under the default UI settings. On the right the settings are changed to use a customized template that better matches the message content.
 
 <div style="text-align:center">
-<img src="public/doc/image/Screenshot_1.png" width="30%" border="5" solid hspace="10"/>
-<img src="public/doc/image/Screenshot_2.png" width="30%" border="5" solid hspace="10"/>
+<img src="https://raw.githubusercontent.com/jimb245/scriptremote/master/public/doc/image/Screenshot_1.png" width="30%" border="5" solid hspace="10"/>
+<img src="https://raw.githubusercontent.com/jimb245/scriptremote/master/public/doc/image/Screenshot_2.png" width="30%" border="5" solid hspace="10"/>
 </div>
 
 
@@ -127,14 +123,14 @@ The 'ng' attributes provide the links to the [**Angular**](https://angularjs.org
 ### **Additional Documentation**
 
 * The [**Guide**](public/doc/guide.md) describes ScriptRemote features in more detail
-* The **API Reference** (https://scriptremote.com/doc/api/index.html) defines the server data endpoints available to clients
+* The [**API Reference**](https://scriptremote.com/doc/api/index.html) defines the server data endpoints available to clients
 
 
 ### **Demo Server**
 
 If you would like to try a few tests with ScriptRemote 
-before installing there is a demo server  
-<a href="https://scriptremote.com">here</a>.  To use it:
+before installing there is a
+<a href="https://scriptremote.com">demo server</a>.  To use it:
 
 1. Register
 

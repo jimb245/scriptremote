@@ -1,8 +1,4 @@
 
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
-
 <h2>
 Installation For Development/Contributing
 </h2>
@@ -204,6 +200,7 @@ The generated outputs are in directories:
 <ul>
 <li><code>public/dist</code></li>
 <li><code>public/doc</code></li>
+<li><code>app/routes/api/api.server.routes.js</code></li>
 <li><code>npm-shrinkwrap.json</code></li>
 <li><code>npm-shrinkwrap-dev.json</code></li>
 </ul>

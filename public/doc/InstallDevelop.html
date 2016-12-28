@@ -1,8 +1,10 @@
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
 
-<h2>
+<!-- layout HTML file -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <div align="right"> <a href="/">Home</a> </div>
+        <h2>
 Installation For Development/Contributing
 </h2>
 
@@ -55,6 +57,9 @@ your forked repo instead of scriptremote.
 &gt;$ cd scriptremote
 ~$ cp npm-shrinkwrap-dev.json npm-shrinkwrap.json
 &gt;$ npm install
+&gt;$ cd public/lib/forge-bower
+&gt;$ npm install
+&gt;$ npm run minify
 </pre>
 </li>
 <br>
@@ -68,6 +73,7 @@ Copy the sample credentials file and substitue your values
 for the <code>MAILER</code> dummy values:
 
 <pre>
+&gt;$ cd ~/scriptremote
 &gt;$ cp credentials.env .env
 &gt;$ chmod 600 .env
 &gt;$ vim .env
@@ -178,6 +184,12 @@ There are ~400 unit tests, of four types:
 <li> Server unit tests based on mocha, should, supertest</li>
 </ul>
 <p>
+If the HTTP 429 error occurs during a test run it is probably because
+the brute force login protection data has become stale. To clear it
+use the <code>mongo</code> commandline utility to connect to the 
+<code>scriptremote-test</code> database and delete the 
+<code>bruteforce</code> collection.
+<p>
 There are no automated end-to-end tests yet.
 </li>
 
@@ -193,6 +205,7 @@ The generated outputs are in directories:
 <ul>
 <li><code>public/dist</code></li>
 <li><code>public/doc</code></li>
+<li><code>app/routes/api/api.server.routes.js</code></li>
 <li><code>npm-shrinkwrap.json</code></li>
 <li><code>npm-shrinkwrap-dev.json</code></li>
 </ul>
@@ -202,10 +215,10 @@ under version control. The non-release configurations (developement, test)
 instead load individual libraries from <code>public/lib</code> and code
 from <code>public/modules</code>.
 <p>
-The task substitutes the version string into files 
-<code>package.json</code> and <code>public/dist/(srio.sh,srio.py)</code>. 
-For cache busting it includes the version or a unique string in the 
-names of files in <code>public/dist</code>. 
+The task substitutes the version string into <code>package.json</code>
+and into copies of the script utility files in <code>public/dist</code>.
+For cache busting it includes the version or a hash string in the 
+names of libraries in <code>public/dist</code>. 
 </li>
 </ul>
 
@@ -216,3 +229,7 @@ names of files in <code>public/dist</code>.
 <a href="http://mean.io">MEAN.IO</a>
 <br>
 <a href="https://www.sitepoint.com/introduction-mean-stack">An Introduction To The MEAN Stack</a></p>
+
+    </body>
+</html>
+

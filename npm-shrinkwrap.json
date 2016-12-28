@@ -1,6 +1,6 @@
 {
   "name": "scriptremote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "async": {
       "version": "0.9.2",
@@ -173,7 +173,7 @@
           "dependencies": {
             "async": {
               "version": "0.2.10",
-              "from": "async@0.2.10",
+              "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
               "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
             },
             "graceful-fs": {
@@ -589,7 +589,7 @@
           "dependencies": {
             "optimist": {
               "version": "0.3.7",
-              "from": "optimist@0.3.7",
+              "from": "https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz",
               "resolved": "https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz",
               "dependencies": {
                 "wordwrap": {
@@ -601,12 +601,12 @@
             },
             "uglify-js": {
               "version": "2.3.6",
-              "from": "uglify-js@2.3.6",
+              "from": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.3.6.tgz",
               "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.3.6.tgz",
               "dependencies": {
                 "async": {
                   "version": "0.2.10",
-                  "from": "async@0.2.10",
+                  "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
                   "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
                 },
                 "source-map": {
@@ -2743,7 +2743,7 @@
                   "dependencies": {
                     "async": {
                       "version": "0.2.10",
-                      "from": "async@0.2.10",
+                      "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
                       "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
                     },
                     "cycle": {
@@ -2970,7 +2970,7 @@
                   "dependencies": {
                     "async": {
                       "version": "0.2.10",
-                      "from": "async@0.2.10",
+                      "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
                       "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
                     },
                     "cycle": {
@@ -3095,7 +3095,7 @@
                   "dependencies": {
                     "async": {
                       "version": "0.2.10",
-                      "from": "async@0.2.10",
+                      "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
                       "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
                     },
                     "deep-equal": {
@@ -3380,7 +3380,7 @@
           "dependencies": {
             "async": {
               "version": "0.2.10",
-              "from": "async@0.2.10",
+              "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
               "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
             },
             "deep-equal": {
@@ -3486,7 +3486,7 @@
           "dependencies": {
             "async": {
               "version": "0.2.10",
-              "from": "async@0.2.10",
+              "from": "https://registry.npmjs.org/async/-/async-0.2.10.tgz",
               "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
             },
             "cycle": {

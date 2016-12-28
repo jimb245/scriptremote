@@ -1,6 +1,5 @@
 {
-  "name": "ScriptRemote",
-  "version": "1.0.0",
+  "name": "ScriptRemote v1.0.1",
   "description": "API documentation for project endpoints",
   "title": "Custom apiDoc browser title",
   "url" : "",
@@ -40,7 +39,7 @@
     "GetFile"
   ],
   "template": {
-  	"withCompare": true,
+  	"withCompare": false,
   	"withGenerator": true
   }
 }

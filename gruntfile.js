@@ -152,75 +152,72 @@ module.exports = function(grunt) {
                     'public/dist/srio.sh': ['public/scripts/bash/srio.sh'],
                     'public/dist/srio.py': ['public/scripts/python/srio.py'],
                     'package.json': ['package.json'],
+                    'apidoc.json': ['apidoc.json'],
                     '<%= cssPath %>' : [ '<%= cssPath %>' ],
-                    'public/doc/readme.html': ['public/doc/readme.html'],
-                    'public/doc/InstallDigitalOcean.html': ['public/doc/InstallDigitalOcean.html'],
-                    'public/doc/guide.html': ['public/doc/guide.html'],
-                    'public/doc/InstallBluemix.html': ['public/doc/InstallBluemix.html'],
-                    'public/doc/InstallGeneric.html': ['public/doc/InstallGeneric.html'],
-                    'public/doc/InstallDevelop.html': ['public/doc/InstallDevelop.html']
+                    'public/doc/readme.html': ['public/doc/readme.html']
                 },
-                // Set version in script files and package.json.
+                // Set version in script files, package.json, apidoc.json.
                 // Fix some font references in css files.
-                // Fix .md references in readme.html which 
-                // was generated from README.md by md2html,
-                // Make Home link visible in .html doc files
-                // that were generated from md by md2html.
+                // Replace .md and github references by local references in
+                // readme.html which was generated from README.md by md2html.
                 options: {
                     replacements: [
                         { pattern: /%version%/, replacement: '<%= appVersion %>' },
                         { pattern: /"version":\s+"\d.\d.\d"/, replacement: '"version": "<%= appVersion %>"' },
+                        { pattern: /ScriptRemote\s+v\d.\d.\d/, replacement: 'ScriptRemote v<%= appVersion %>' },
                         { pattern: "../fonts/glyphicons-halflings-regular.woff", replacement: '<%= woffPath %>' },
                         { pattern: "../fonts/glyphicons-halflings-regular.ttf", replacement: '<%= ttfPath %>' },
-                        { pattern: /public\/doc/g, replacement: '/doc' },
+                        { pattern: /public\/doc\/Install/g, replacement: '/doc/Install' },
+                        { pattern: /public\/doc\/guide/g, replacement: '/doc/guide' },
+                        { pattern: /https:\/\/raw.githubusercontent.com\/jimb245\/scriptremote\/master\/public\/doc\/image/g, replacement: '/doc/image' },
+                        { pattern: /https:\/\/scriptremote.com\/doc\/api/g, replacement: '/doc/api' },
                         { pattern: "guide.md", replacement: 'guide.html' },
                         { pattern: "InstallDigitalOcean.md", replacement: 'InstallDigitalOcean.html' },
                         { pattern: "InstallBluemix.md", replacement: 'InstallBluemix.html' },
                         { pattern: "InstallGeneric.md", replacement: 'InstallGeneric.html' },
-                        { pattern: "InstallDevelop.md", replacement: 'InstallDevelop.html' },
-                        { pattern: "display:none", replacement: 'display:block' }
+                        { pattern: "InstallDevelop.md", replacement: 'InstallDevelop.html' }
                     ]
                 }
             }
         },
         md2html: {
             readme_file: {
-                options: {},
+                options: {layout:'public/doc/md2html/layout.html'},
                 files: [{
                 src: ['README.md'],
                 dest: 'public/doc/readme.html'
                 }]
             },
             guide_file: {
-                options: {},
+                options: {layout:'public/doc/md2html/layout.html'},
                 files: [{
                 src: ['public/doc/guide.md'],
                 dest: 'public/doc/guide.html'
                 }]
             },
             installdo_file: {
-                options: {},
+                options: {layout:'public/doc/md2html/layout.html'},
                 files: [{
                 src: ['public/doc/InstallDigitalOcean.md'],
                 dest: 'public/doc/InstallDigitalOcean.html'
                 }]
             },
             installblue_file: {
-                options: {},
+                options: {layout:'public/doc/md2html/layout.html'},
                 files: [{
                 src: ['public/doc/InstallBluemix.md'],
                 dest: 'public/doc/InstallBluemix.html'
                 }]
             },
             installgen_file: {
-                options: {},
+                options: {layout:'public/doc/md2html/layout.html'},
                 files: [{
                 src: ['public/doc/InstallGeneric.md'],
                 dest: 'public/doc/InstallGeneric.html'
                 }]
             },
             installdev_file: {
-                options: {},
+                options: {layout:'public/doc/md2html/layout.html'},
                 files: [{
                 src: ['public/doc/InstallDevelop.md'],
                 dest: 'public/doc/InstallDevelop.html'

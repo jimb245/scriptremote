@@ -1,8 +1,4 @@
 
-<div align="right" style="display:none">
-<a href="/">Home</a>
-</div>
-
 <h2>
 Installation On Generic Private Server
 </h2>
@@ -18,15 +14,13 @@ private network will access the server using an existing VPN gateway.
 <br>
 <a href="https://docs.mongodb.com/master/administration/install-community">Install MongoDB Community Edition</a>
 <p>
-Also install <a href="https://git-scm.com">git </a>if not already present.
-<p>
-<p>
 Installation may require root access.
 If the ScriptRemote server needs to use an existing, networked MongoDB service
 then the procedure below needs to be slightly modified. You will need to set
 the <code>MONGO_URL</code> or <code>MONGO_HOST_PORT</code> environment variable (see config/env/production.js)
 and you may need to add MongoDB credentials to the .env file.
 </li>
+
 <li>
 <b>Install ScriptRemote</b>
 <p>
@@ -35,6 +29,7 @@ Login as a non-root user
 <pre>
 >$ cd ~ (or your preferred install location)
 >$ npm install scriptremote --production
+>$ mv node_modules/scriptremote .
 </pre>
 </li>
 <br>

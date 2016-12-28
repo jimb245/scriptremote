@@ -5,7 +5,7 @@ module.exports = {
 		title: 'ScriptRemote',
 		description: 'Server providing messaging between scripts and browsers',
 		keywords: 'MongoDB, Express, AngularJS, Node.js',
-        version: '1.0.0'
+        version: '1.0.1'
 	},
 	sessionSecret: process.env.SESSION_SECRET,
 	sessionCollection: 'sessions', // mongo sessions name
