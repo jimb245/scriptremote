@@ -1,6 +1,7 @@
 {
   "name": "scriptremote",
-  "description": "Message server between scripts and remote browsers",
+  "description": "Message server providing secure remote access to scripted applications from a browser UI",
+  "keywords": ["message server", "remote access", "browser UI", "Angular", "MEAN"],
   "version": "1.0.1",
   "license": "MIT",
   "author": {

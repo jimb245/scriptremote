@@ -13,7 +13,8 @@ module.exports = function(config) {
 
         // Setup for loading views into Angular cache
         preprocessors: {
-            '**/*.html': ['ng-html2js']
+            '**/*.html': ['ng-html2js'],
+            '**/modules/**/!(tests)/*.js': ['coverage']
         },
         ngHtml2JsPreprocessor: {
             moduleName: 'foo'
@@ -25,7 +26,7 @@ module.exports = function(config) {
 		// Test results reporter to use
 		// Possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
 		//reporters: ['progress'],
-		reporters: ['mocha'],
+		reporters: ['mocha', 'coverage'],
 
 		// Web server port
 		port: 9876,
@@ -58,5 +59,6 @@ module.exports = function(config) {
 		// If true, it capture browsers, run tests and exit
 		singleRun: true,
 		//singleRun: false,
+        browserNoActivityTimeout: 20000
 	})
 };
