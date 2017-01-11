@@ -1,7 +1,7 @@
 #!/bin/bash
 #################################################################
 #
-# bash utilities for ScriptRemote, Version 1.0.1
+# bash utilities for ScriptRemote, Version 1.0.2
 #
 # Dependencies: bash, curl, openssl
 # Tested: bash 4.3.11, curl 7.35.0, openssl 1.0.1f
