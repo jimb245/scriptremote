@@ -175,7 +175,8 @@ module.exports = function(grunt) {
                         { pattern: "InstallDigitalOcean.md", replacement: 'InstallDigitalOcean.html' },
                         { pattern: "InstallBluemix.md", replacement: 'InstallBluemix.html' },
                         { pattern: "InstallGeneric.md", replacement: 'InstallGeneric.html' },
-                        { pattern: "InstallDevelop.md", replacement: 'InstallDevelop.html' }
+                        { pattern: "InstallDevelop.md", replacement: 'InstallDevelop.html' },
+                        { pattern: "InstallDocker.md", replacement: 'InstallDocker.html' }
                     ]
                 }
             }
@@ -221,6 +222,13 @@ module.exports = function(grunt) {
                 files: [{
                 src: ['public/doc/InstallDevelop.md'],
                 dest: 'public/doc/InstallDevelop.html'
+                }]
+            },
+            installdev_file: {
+                options: {layout:'public/doc/md2html/layout.html'},
+                files: [{
+                src: ['public/doc/InstallDocker.md'],
+                dest: 'public/doc/InstallDocker.html'
                 }]
             }
         },

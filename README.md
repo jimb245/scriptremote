@@ -182,8 +182,10 @@ A basic platform choice is between public and private servers.
 
 **Private server** - Is located in a protected network, probably the same one containing the scripted application. Browser access is through a VPN or SSH tunnel client running on the remote device. Script connections might traverse internal firewalls. Use of TLS on the server may not be required if connections through the public net are otherwise protected and there is sufficient confidence in the security of the private network.
 
-For a small site not needing high availability, the server can just be a machine or VPS that can support a MEAN-stack environment and forward email. Another option is a platform-as-a-service vendor that supports MEAN-stack.
+For a small site not needing high availability, the server can just be a machine, VPS, or container that can support a MEAN-stack environment and forward email. Another option is a platform-as-a-service vendor that supports MEAN-stack.
 
+
+[**Installation on Docker**](public/doc/InstallDocker.md)
 
 [**Installation on Digital Ocean Droplet**](public/doc/InstallDigitalOcean.md)
 
