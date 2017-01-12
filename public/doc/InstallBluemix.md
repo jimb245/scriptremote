@@ -150,16 +150,13 @@ to the server from scripts running in the private network.
 <b>Check that the server can be reached from the private network</b>
 <p>
 Copy the API credentials obtained above to a machine in the private
-network, then copy the bash utility script from the local 
-scriptremote installation or download it:
-
-<pre>
->$ wget https://scriptremote/dist/srio.sh
-</pre>
-
-Set <code>SRSERVER</code> to the url of your Bluemix server, by editing the script
-or as an environment variable. If the script will run behind a web proxy it may
-also be necessary to set the HTTPS_PROXY environment variable.
+network. Get the bash utility script <code>scriptremote/public/dist/srio.sh</code>
+from the local scriptremote installation.
+<p>
+Set <code>SRSERVER</code> to the url of your Bluemix server, 
+by editing the script or as an environment variable. If the script will run behind a 
+web proxy it may
+also be necessary to set the <code>HTTPS_PROXY</code> environment variable.
 
 <pre>
 >$ export SRSERVER=https://&lt;your-url&gt;
@@ -196,7 +193,7 @@ a root certificate.
 <br>
 
 <li>
-<b>Create non-admin user</b>
+<b>Optional: Create non-admin user</b>
 <p>
 Since the admin has elevated priviledges to do things
 like viewing user details and registering new users, it is best

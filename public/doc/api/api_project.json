@@ -1,6 +1,6 @@
 {
-  "name": "ScriptRemote v1.0.2",
-  "version": "1.0.2",
+  "name": "ScriptRemote v",
+  "version": "0.0.0",
   "description": "API documentation for project endpoints",
   "title": "Custom apiDoc browser title",
   "url": "",
@@ -47,7 +47,7 @@
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-01-11T05:53:35.490Z",
+    "time": "2017-01-12T03:05:05.669Z",
     "url": "http://apidocjs.com",
     "version": "0.16.1"
   }

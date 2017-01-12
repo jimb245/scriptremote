@@ -12,9 +12,12 @@ external proxy.
 <ol>
 <li>
 <b>Copy environment file to Docker host</b>
+<p>
+You can 
+<a href="https://github.com/jimb245/scriptremote/blob/master/public/docker/docker.env">download it</a>
+from github using a browser or copy it from the demo website:
 <pre>
->$ wget https://github.com/jimb245/scriptremote/blob/master/public/docker/docker.env
->$ chmod 600 docker.env
+>$ wget https://scriptremote.com/docker/docker.env
 </pre>
 </li>
 
@@ -117,10 +120,12 @@ to the server from scripts.
 <b>Check that the server can be reached from the private network</b>
 <p>
 Copy the API credentials obtained above to a machine in the private
-network, then download the bash utility script:
-
+network. Get the bash utility script <code>scriptremote/public/dist/srio.sh</code>.
+You can 
+<a href="https://github.com/jimb245/scriptremote/blob/master/public/dist/srio.sh">download it</a>
+from github using a browser or copy it from the demo website:
 <pre>
->$ wget https://github.com/jimb245/scriptremote/blob/master/public/dist/srio.sh
+>$ wget https://scriptremote.com/dist/srio.sh
 </pre>
 
 Set <code>SRSERVER</code> to the url of your server, by editing the script
@@ -179,9 +184,9 @@ one used to for the admin account.
 You may want to enable limits on the amount of message data that can be
 sent to the server, for example to help protect against scripting errors
 that could produce very large or very many messages.
-The available limits are defined in 
-<a href="https://github.com/jimb245/scriptremote/blob/master/config/env/all.js"><pre>config/env/all.js</pre></a>
-Any of them may be set as environment variables in docker.env prior to starting the server.
+The available limits are defined in <code>scriptremote/config/env/all.js</code>.
+Any of them may be set as environment variables in <code>docker.env</code> prior 
+to starting the server.
 </li>
 <br>
 

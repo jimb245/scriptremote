@@ -145,17 +145,14 @@ to the server from scripts.
 <li>
 <b>Check that the server can be reached from the private network</b>
 <p>
-Copy the API credentials obtained above to a test machine,
-then copy the bash utility script from the local scriptremote 
-installation or download it:
-
-<pre>
->$ wget https://scriptremote/dist/srio.sh
-</pre>
-
-Set <code>SRSERVER</code> to the IP address and port or url of your server, by editing the script
-or as an environment variables. The protocol should be <code>http</code>. If there is a web proxy between the 
-script and your server it may also be necesary to set the http_proxy environment variable.
+Copy the API credentials obtained above to a test machine in the private
+network. Get the bash utility script <code>scriptremote/public/dist/srio.sh</code>
+from the local scriptremote installation.
+<p>
+Set <code>SRSERVER</code> to the IP address and port or url of your server, 
+by editing the script or as an environment variables. The protocol should be <code>http</code>. 
+If there is a web proxy between the 
+script and your server it may also be necesary to set the <code>http_proxy</code> environment variable.
 
 <pre>
 >$ export SRSERVER=&lt;your-url&gt;
@@ -187,7 +184,7 @@ selecting <b>Projects</b> in the menu bar.
 <br>
 
 <li>
-<b>Create non-admin user</b>
+<b>Optional: Create non-admin user</b>
 <p>
 Since the admin has elevated priviledges to do things
 like viewing user details and registering new users, it is best

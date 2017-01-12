@@ -265,12 +265,11 @@ to the server from scripts running in the private network.
 <b>Check that the server can be reached from the private network</b>
 <p>
 Copy the API credentials obtained above to a machine in the private
-network, then download the bash utility script:
-
-<pre>
-&gt;$ wget <a href="https://&lt;your-domain&gt;/dist/srio.sh">https://&lt;your-domain&gt;/dist/srio.sh</a>
-</pre>
-
+network. Get the bash utility script <code>scriptremote/public/dist/srio.sh</code>.
+You can copy it from the server installation or it may be easier to
+<a href="https://github.com/jimb245/scriptremote/blob/master/public/dist/srio.sh">download it</a>
+from github using a browser.
+<p>
 Set <code>SRSERVER</code> to the url of your server, by editing the script
 or as an environment variable. If the script will run behind a web proxy it may
 also be necessary to set the HTTPS_PROXY environment variable.
@@ -342,7 +341,7 @@ To exit the buffer type &#39;return&#39; twice
 <br>
 
 <li>
-<b>Create non-admin user</b>
+<b>Optional: Create non-admin user</b>
 <p>
 Since the admin has elevated priviledges to do things
 like viewing user details and registering new users, it is best
@@ -428,7 +427,7 @@ and substitute your values, then restart the ScriptRemote server.
 You may want to enable limits on the amount of message data that can be
 sent to the server, for example to help protect against scripting errors
 that could produce very large or very many messages.
-The available limits are defined in <pre>config/env/all.js</pre>
+The available limits are defined in <code>scriptremote/config/env/all.js</code>.
 Any of them may be set as environment variables or added to the .env file
 prior to starting the server.
 </li>
