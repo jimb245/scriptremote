@@ -2,7 +2,7 @@
   "name": "scriptremote",
   "description": "Message server providing secure remote access to scripted applications from a browser UI",
   "keywords": ["message server", "remote access", "browser UI", "Angular", "MEAN"],
-  "version": "",
+  "version": "1.0.2",
   "license": "MIT",
   "author": {
     "name": "Jim Brandt",
